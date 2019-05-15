@@ -1,4 +1,4 @@
 ﻿#READ ME#
-LAB text
+LAB text423423
 预设用户名：admin
 预设密码：123456
