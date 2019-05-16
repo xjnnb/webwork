@@ -1,2 +1,9 @@
 # for Mac OS X System Files
 .DS_Store
+
+
+# for WebStorm
+.idea
+
+# for vscode
+.vscode
