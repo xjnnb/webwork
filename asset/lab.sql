@@ -3,15 +3,15 @@
 
  Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 50714
+ Source Server Version : 50617
  Source Host           : localhost:3306
  Source Schema         : lab
 
  Target Server Type    : MySQL
- Target Server Version : 50714
+ Target Server Version : 50617
  File Encoding         : 65001
 
- Date: 16/05/2019 09:59:28
+ Date: 16/05/2019 20:28:15
 */
 
 SET NAMES utf8mb4;
@@ -24,6 +24,7 @@ DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin`  (
   `admin_id` int(11) NOT NULL,
   `admin_password` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `admin_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
   PRIMARY KEY (`admin_id`) USING BTREE
 ) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
@@ -38,15 +39,32 @@ CREATE TABLE `introduce`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Table structure for notice
+-- ----------------------------
+DROP TABLE IF EXISTS `notice`;
+CREATE TABLE `notice`  (
+  `notice_id` int(11) NOT NULL,
+  `notice_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `notice_date` date NULL DEFAULT NULL,
+  `notice_type` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `text` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  PRIMARY KEY (`notice_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+
+-- ----------------------------
 -- Table structure for plan
 -- ----------------------------
 DROP TABLE IF EXISTS `plan`;
 CREATE TABLE `plan`  (
   `plan_id` int(11) NOT NULL COMMENT '公告标号',
-  `plan_data` date NULL DEFAULT NULL,
-  `category` int(255) NULL DEFAULT NULL COMMENT '类别 1比赛 2通知',
+  `plan_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '计划名',
+  `plan_date` date NULL DEFAULT NULL COMMENT '比赛日期',
+  `plan_type` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '类别 1比赛 2通知',
   `text` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '文本内容',
-  PRIMARY KEY (`plan_id`) USING BTREE
+  `team_id` int(11) NULL DEFAULT NULL COMMENT '团队号',
+  PRIMARY KEY (`plan_id`) USING BTREE,
+  INDEX `team_id`(`team_id`) USING BTREE,
+  CONSTRAINT `plan_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `team` (`team_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -55,7 +73,7 @@ CREATE TABLE `plan`  (
 DROP TABLE IF EXISTS `stu`;
 CREATE TABLE `stu`  (
   `stu_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
-  `stu_num` int(11) NOT NULL,
+  `stu_id` int(11) NOT NULL,
   `sex` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
   `team_id` int(255) NULL DEFAULT NULL,
   `grade` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '级段',
@@ -63,7 +81,7 @@ CREATE TABLE `stu`  (
   `introduce_id` int(11) NULL DEFAULT NULL,
   `isok` int(255) NULL DEFAULT NULL COMMENT '审核通过',
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
-  PRIMARY KEY (`stu_num`) USING BTREE,
+  PRIMARY KEY (`stu_id`) USING BTREE,
   INDEX `team_id`(`team_id`) USING BTREE,
   CONSTRAINT `stu_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `team` (`team_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
@@ -74,14 +92,16 @@ CREATE TABLE `stu`  (
 DROP TABLE IF EXISTS `teacher`;
 CREATE TABLE `teacher`  (
   `teacher_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `teacher_num` int(11) NOT NULL,
+  `teacher_id` int(11) NOT NULL,
   `sex` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
   `team_id` int(11) NULL DEFAULT NULL,
   `teacher_dept` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
   `introduce_id` int(11) NULL DEFAULT NULL,
   `isok` int(255) NULL DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
-  PRIMARY KEY (`teacher_num`) USING BTREE
+  PRIMARY KEY (`teacher_id`) USING BTREE,
+  INDEX `team_id`(`team_id`) USING BTREE,
+  CONSTRAINT `teacher_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `team` (`team_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
