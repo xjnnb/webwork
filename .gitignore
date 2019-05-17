@@ -3,7 +3,8 @@
 
 
 # for WebStorm
-.idea
+.project
+*.idea
 
 # for vscode
-.vscode
+*.vscode
