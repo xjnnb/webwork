@@ -9,3 +9,9 @@
 2.页面框架index.php（未完成）
 3.课程设计书   数据库部分（solve）
 4.课程设计书   功能分析（solve）
+
+##v1.0.2
+1.课程设计书  流程图(solved)
+2.流程图全部更新 rename file folder FlowChart
+3.更新gitignore 忽略制定文件夹
+4.删除readme.txt
