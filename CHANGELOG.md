@@ -8,3 +8,4 @@
 1.数据库文件lab.sql存储在asset中
 2.页面框架index.php（未完成）
 3.课程设计书   数据库部分（solve）
+4.课程设计书   功能分析（solve）
