@@ -15,3 +15,4 @@
 2.流程图全部更新 rename file folder FlowChart
 3.更新gitignore 忽略制定文件夹
 4.删除readme.txt
+5.重写index.php（unsolved）

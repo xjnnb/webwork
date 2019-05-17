@@ -20,7 +20,9 @@
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="asset/css/ready.css">
+    <link rel="stylesheet" href="asset/css/demo.css">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
@@ -47,35 +49,21 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Help</a></li>
+                <li><a href="#">Sign out</a></li>
             </ul>
             <form class="navbar-left navbar-form nav-search mr-md-3" action="">
                 <div row>
-                        <div class="col-lg-6">
+                        <div class="col-lg">
                             <div class="input-group">
-                                <input type="text" class="form-control" aria-label="Text input with segmented button dropdown">
+                                <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
                             </div>
+                            <!-- /.input-group -->
                         </div>
-                        <div class="col-lg-3">
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-default">Action</button>
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="caret"></span>
-                                    <span class="sr-only">Toggle Dropdown</span>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- /.input-group -->
+
+
 
                 </div>
             </form>
@@ -124,6 +112,7 @@
                         </div>
                     </div>
                 </div>
+
             </ul>
             <ul class="nav nav-sidebar">
                 <li><a href="">人员信息管理</a></li>
