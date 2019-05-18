@@ -35,9 +35,9 @@
 </head>
 
 <body>
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -51,27 +51,26 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Sign out</a></li>
             </ul>
-            <form class="navbar-left navbar-form nav-search mr-md-3" action="">
-                <div row>
-                        <div class="col-lg">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
-                                    </span>
-                            </div>
-                            <!-- /.input-group -->
-                        </div>
-
-
-
-                </div>
-            </form>
+            <!--            <form class="navbar-left navbar-form nav-search mr-md-3" action="">-->
+            <!--                <div row>-->
+            <!--                        <div class="col-lg">-->
+            <!--                            <div class="input-group">-->
+            <!--                                <input type="text" class="form-control" placeholder="Search for...">-->
+            <!--                                    <span class="input-group-btn">-->
+            <!--                                        <button class="btn btn-default" type="button">Go!</button>-->
+            <!--                                    </span>-->
+            <!--                            </div>-->
+            <!--                            &lt;!&ndash; /.input-group &ndash;&gt;-->
+            <!--                        </div>-->
+            <!--                </div>-->
+            <!--            </form>-->
         </div>
-    </div>
-</nav>
 
+</nav>
+</div>
 <div class="container-fluid">
+
+
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
@@ -89,22 +88,20 @@
 									<span class="caret"></span>
 								</span>
                         </a>
-                        <div class="clearfix"></div>
-
                         <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
                             <ul class="nav">
                                 <li>
-                                    <a href="#profile">
+                                    <a href="#">
                                         <span class="link-collapse">My Profile</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#edit">
+                                    <a href="#">
                                         <span class="link-collapse">Edit Profile</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#settings">
+                                    <a href="#">
                                         <span class="link-collapse">Settings</span>
                                     </a>
                                 </li>
@@ -112,17 +109,30 @@
                         </div>
                     </div>
                 </div>
+                <ul class="nav nav-sidebar">
+                    <li><a href="">人员信息管理</a></li>
+                    <li><a href="">团队信息管理</a></li>
+                    <li><a href="">公告资讯管理</a></li>
 
-            </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="">人员信息管理</a></li>
-                <li><a href="">团队信息管理</a></li>
-                <li><a href="">公告资讯管理</a></li>
-
+                </ul>
             </ul>
 
         </div>
+        <div class="col-sm-9 col-md-10 ">
+                        <form class="navbar-left navbar-form nav-search mr-md-3" action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
+                            </div>
+                            <!-- /.input-group -->
 
+                        </form>
+
+
+
+        </div>>
     </div>
 </div>
 
