@@ -1,45 +1,89 @@
 /*
 Author:Xu Jianan
-BuildDate:2019-04-10
-Version:1.1
-Function:lab-5 Login JS
+BuildDate:2019-04-24
+Version:1.0
+Function:lab-7 Login JS Powered By JQuery
 */
-var flag = false;//初始化flag
-//对键盘输入作出响应
-function keyTrigger(){
-    if (event.keyCode == 13){// 单击回车（13）触发
-        log_check();// 调用登陆方法
+//对键盘事件作出响应
+$(document).keydown(function(event) {
+    //单击回车键登陆检查
+    if (event.keyCode == "13") {//keyCode=13是回车键
+        $.getJSON("js/users.json",function (data) {//使用AJAX请求来获得JSON数据
+            $.each(data,function (index,obj) {//对JSON进行遍历
+                if ($('#user').val() == obj.name && $('#password').val() == obj.pwd) {//比较数据，并输出结果
+                    $("#logResult").css("color","black");
+                    $("#logResult").html("登录成功");
+                    setTimeout("window.location='room/room.html';", 800);//设置延时跳转
+                }
+                else {
+                    $("#logResult").css("color","red");
+                    $("#logResult").html("登录失败");
+                }
+            })
+        })
     }
-}
-//聚焦于username时初始化输入框及提示栏
-function resetUsername() {
-    var userObj = document.getElementById("userResult");
-    var strObj = document.getElementById("user");
-    strObj.style.color="black";
-    userObj.innerHTML = "";
-}
-//聚焦于password时初始化输入框及提示栏
-function resetPassword() {
-    var pwdObj = document.getElementById("pwdResult");
-    pwdObj.innerHTML="";
-}
-//检查用户名是否符合要求并输出提示
-function check_username() {
-    var userObj = document.getElementById("userResult");
-    var strObj = document.getElementById("user");
-    var userStr = strObj.value;
-    var warnInfo = check_username_legal(userStr);
-    if (warnInfo == "") {
-        strObj.style.color="black";
-        userObj.innerHTML = warnInfo;
-        flag = true;
-    }
-    else {
-        userObj.style.color="red";
-        strObj.style.color="red";//高亮已输入的字符
-        userObj.innerHTML = warnInfo;
-    }
-}
+});
+$(document).ready(function(){//当页面加载完成后执行
+    //聚焦于username时初始化输入框及提示栏
+    $("#user").focus(function(){
+        $(this).css("background-color","#FFFFCC");
+        $(this).css("color","black");
+        $("#userResult").html("");
+        $("#logResult").html("");
+    });
+    //检查用户名是否符合要求并输出提示
+    $("#user").blur(function(){
+        $(this).css("background-color","#FFFFFF");
+        var warnInfo = check_username_legal($(this).val());
+        if (warnInfo === "") {
+            $(this).css("color","black");
+            $("#userResult").html(warnInfo);
+        }
+        else {
+            $(this).css("color","red");
+            $("#userResult").css("color","red");
+            $("#userResult").html(warnInfo);
+        }
+    });
+    //聚焦于password时初始化输入框及提示栏
+    $("#password").focus(function(){
+        $(this).css("background-color","#FFFFCC");
+        $(this).css("color","black");
+        $("#pwdResult").html("");
+        $("#logResult").html("");
+    });
+    //检查密码是否符合要求并输出提示
+    $("#password").blur(function(){
+        $(this).css("background-color","#FFFFFF");
+        $("#pwdResult").css("color","red");
+        var len = $("#password").val().length;
+        if (len == 0) {
+            $("#pwdResult").html( "密码为空");
+        }
+        else if (len>6){
+            $("#pwdResult").html( "密码不得超过六位");
+        }
+    });
+    //单击登陆按钮登陆检查
+    $("#button").click(function(){
+        $.getJSON("js/users.json",function (data) {//使用AJAX请求来获得JSON数据
+            $.each(data,function (index,obj) {//对JSON进行遍历
+                if ($('#user').val() == obj.name && $('#password').val() == obj.pwd) {//比较数据，并输出结果
+                    $("#logResult").css("color","black");
+                    $("#logResult").html("登录成功");
+                    setTimeout("window.location='room/room.html';", 800);//设置延时跳转
+                }
+                else {
+                    $("#logResult").css("color","red");
+                    $("#logResult").html("登录失败");
+                }
+            })
+        })
+    });
+
+});
+
+// TODO:优化密码判断结构
 // 检查用户名是否合法
 function check_username_legal(str) {
     var warnInfo = "";
@@ -57,50 +101,4 @@ function check_username_legal(str) {
 function check_other_char(str) {
     var other_char =/\w[\u4e00-\u9fa5a-zA-Z0-9_-]*/;//排除特殊字符与中文
     return str==str.match(other_char);//比较用户名
-}
-//检查密码是否符合要求并输出提示
-function check_password() {
-    var pwdObj = document.getElementById("pwdResult");
-    var pwd = document.getElementById("password");
-    pwdObj.style.color="red";
-    var pwdStr = pwd.value;
-    var len = pwdStr.length;
-    if (len == 6) {
-        pwdObj.innerHTML = "";//
-        flag = true;
-    }
-    else if(len == 0){
-        pwdObj.innerHTML = "密码为空";
-        flag = false;
-    }
-    else{
-        pwdObj.innerHTML = "密码长度输入有误";
-        flag = false;
-    }
-}
-//登陆
-function log_check() {
-    flag = false;//初始化flag
-    check_username();//检查用户名是否符合要求
-    check_password();//检查密码是否符合要求
-    admin_pwd=123456;//初始密码123456
-    admin_username="admin";//初始用户名admin
-    var logObj = document.getElementById("logResult");
-    logObj.innerHTML = "";//还原Log提示框
-    logObj.style.color="red";
-    var pwd = document.getElementById("password");
-    var pwdStr = pwd.value;
-    var strObj = document.getElementById("user");
-    var userStr = strObj.value;
-    if (flag == true) {//判断用户名与密码是否符合要求
-        if ((pwdStr==admin_pwd)&&(userStr==admin_username)) {//判断密码或用户名是否正确
-            window.location.href="room/room.html";
-        }
-        else {
-            logObj.innerHTML = "密码或用户名错误";
-        }
-    }
-    else {
-        logObj.innerHTML = "输入信息有误，请查看提示";
-    }
 }

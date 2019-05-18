@@ -6,59 +6,54 @@
     Version:2.0
     Function:lab-5 Sign Up Surface
  -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>欢迎注册 43不想2</title>
     <link rel="stylesheet" href="signup.css" type="text/css">
 </head>
+
 <body>
-<div class="container">
-    <div id="logoAndName">
-    <img id="logo" src="../images/logo.png" alt="">
-    <h3 id="name">43不想2</h3>
-    </div>
-    <p id="titleTxt"><a>了解更多</a>&ensp;|&ensp;<a>反馈意见</a>&emsp;</p>
-    <div class="main">
-        <h1 class="header">欢迎注册 43不想2</h1>
-        <form class="section" action="" method="post">
-            <h5 class="describe" id="emailDes"><span class="describeHighlight">*</span>邮箱地址</h5>
-                <input type="text" class="inputs" id="email" placeholder="Enter Your Email Address" onblur="check_email();" onfocus="clear_emailError();">
-                <select id="mailAddress">
-                    <option value="@gmail.com">@gmail.com</option>
-                    <option value="@outlook.com">@outlook.com</option>
-                    <option value ="@qq.com">@qq.com</option>
-                    <option value ="@163.com">@163.com</option>
-                    <option value="@126.com">@126.com</option>
-                    <option value="@icloud.com">@icloud.com</option>
-                    <option value="@exange.com">@exange.com</option>
-                </select>
+    <div class="container">
+        <p id="titleTxt"><a>了解更多</a>&ensp;|&ensp;<a>反馈意见</a>&emsp;</p>
+        <div class="main">
+            <h1 class="header">欢迎注册</h1>
+            <form class="section" action="" method="post">
+                <h5 class="describe" id="emailDes">&emsp; &emsp;<span class="describeHighlight">*</span>姓名</h5>
+                <input type="text" class="inputs" id="email" placeholder="Enter Your Email Address"
+                onblur="check_email();" onfocus="clear_emailError();">
                 <p class="results" id="emailResult"></p>
                 <p class="errors" id="emailError"></p>
-            <h5 class="describe" id="pwdDes">&emsp; &emsp;<span class="describeHighlight">*</span>密码</h5>
-                <input type="password" class="inputs" id="password" placeholder="Enter Your Password" onblur="check_pwd();" onfocus="clear_pwdError();">
-                <p class="results" id="pwdResult"></p>
-                <p class="errors" id="pwdError"></p>
-            <h5 class="describe" id="pwdCheckDes"><span class="describeHighlight">*</span>确认密码</h5>
-                <input type="password" class="inputs" id="pwdCheck" placeholder="Confirm Your Password" onblur="check_pwdAgain();" onfocus="clear_pwdAgainError();">
-                <p class="results" id="pwdCheckResult"></p>
-                <p class="errors" id="pwdCheckError"></p>
-            <h5 class="describe" id="phoneDes"><span class="describeHighlight">*</span>手机号码</h5>
-                <input type="text" class="inputs" id="phone" placeholder="Enter Your Phone Number" onblur="check_phoneNum();" onfocus="clear_phoneNumError();">
+                <h5 class="describe" id="phoneDes">&emsp;<span class="describeHighlight">*</span>学工号</h5>
+                <input type="text" class="inputs" id="phone" placeholder="Enter Your Phone Number"
+                    onblur="check_phoneNum();" onfocus="clear_phoneNumError();">
                 <p class="results" id="phoneResult"></p>
                 <p class="errors" id="phoneError"></p>
-            <h5 class="describe" id="verifyDes">&emsp;<span class="describeHighlight">*</span>验证码</h5>
-                <input type="text" class="inputs" id="verifyCode" placeholder="Enter the Verify Code" onblur="check_verifyCode();" onfocus="clear_verifyCodeError();"
-                       onkeypress="keyTrigger();"><!--将鼠标焦点置于验证码输入框时监听键盘事件-->
+                <h5 class="describe" id="pwdDes">&emsp; &emsp;<span class="describeHighlight">*</span>密码</h5>
+                <input type="password" class="inputs" id="password" placeholder="Enter Your Password"
+                    onblur="check_pwd();" onfocus="clear_pwdError();">
+                <p class="results" id="pwdResult"></p>
+                <p class="errors" id="pwdError"></p>
+                <h5 class="describe" id="pwdCheckDes"><span class="describeHighlight">*</span>确认密码</h5>
+                <input type="password" class="inputs" id="pwdCheck" placeholder="Confirm Your Password"
+                    onblur="check_pwdAgain();" onfocus="clear_pwdAgainError();">
+                <p class="results" id="pwdCheckResult"></p>
+                <p class="errors" id="pwdCheckError"></p>
+                <h5 class="describe" id="verifyDes">&emsp;<span class="describeHighlight">*</span>验证码</h5>
+                <input type="text" class="inputs" id="verifyCode" placeholder="Enter the Verify Code"
+                    onblur="check_verifyCode();" onfocus="clear_verifyCodeError();" onkeypress="keyTrigger();">
+                <!--将鼠标焦点置于验证码输入框时监听键盘事件-->
                 <p class="results" id="verifyCodeResult"></p>
-            <img id="VerifyCodePhoto" src="" alt="">
+                <img id="VerifyCodePhoto" src="" alt="">
                 <p id="changeVerifyCode"><a onclick=change_verifyCodePhoto()>看不清？换张图片</a></p>
                 <p class="errors" id="verifyCodeError"></p>
-            <p id="checkboxTxt"><input type="checkbox" id="checkbox"/>同意<a>服务条款</a>及<a>隐私政策</a></p>
-            <input type="button" class="button" id="button" value="注册" onclick="submit_check();">
-        </form>
+                <p id="checkboxTxt"><input type="checkbox" id="checkbox" />同意<a>服务条款</a>及<a>隐私政策</a></p>
+                <input type="button" class="button" id="button" value="注册" onclick="submit_check();">
+            </form>
+        </div>
     </div>
-</div>
-<script type="text/javascript" src="../js/signup.js"></script>
+    <script type="text/javascript" src="../js/signup.js"></script>
 </body>
+
 </html>

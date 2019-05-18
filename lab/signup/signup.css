@@ -17,7 +17,8 @@ a{
     color: royalblue;
 }
 body{
-    background: url(../images/bg.jpeg) rgba(0,0,0,0.5) repeat;
+    background: url(../images/landscape.jpg);
+    background-size: cover;
     position:absolute;
     left:0px;
     right: 0px;
