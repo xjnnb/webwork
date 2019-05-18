@@ -4,9 +4,9 @@
 
 # for WebStorm
 .project
-.idea/
+/.idea
 .idea
 .xml
 
 # for vscode
-.vscode/
+/.vscode
