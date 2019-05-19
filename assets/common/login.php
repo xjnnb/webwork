@@ -1,48 +1,49 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>登录验证</title>
+</head>
+<body>
+<div class="main">
+    <?php
 
-$user = $_POST["user"];
-$pwd = $_POST["password"];
-$con=mysqli_connect("localhost","root","","lab");
-$flag=0;
-if (mysqli_connect_errno($con))
-{
-    echo "连接 MySQL 失败: " . mysqli_connect_error();
-}
+        $user = $_POST["user"];
+        $pwd = $_POST["password"];
 
+        if($user==null||$pwd==null){
+            header("location:../../index.html");//直接打开该php文件，跳转到登录界面
+//            echo "<h3>密码空</h3>";
+        }
 
-
-
-$query="select password from stu where stu_id='{$user}'";
-
-$result=mysqli_query($con,$query);
-
-// 获取数据
-$arr=mysqli_fetch_all($result,MYSQLI_ASSOC);
-if($arr[0][0]===$pwd) {
-    $flag=1;
-}
-
-$query="select password from teacher where teacher_id= '{$user}'";
-
-$result=mysqli_query($con,$query);
-
-// 获取数据
-$arr=mysqli_fetch_all($result,MYSQLI_ASSOC);
-if($arr[0][0]===$pwd) {
-    $flag=2;
-}
-if($flag!=0) {
-    header("location:http://www.baidu.com");
-}else{
-    header("location:http://www.baidu.com");
-    echo "用户名或密码错误!";
-}
-
-// 释放结果集
-mysqli_free_result($result);
-
-mysqli_close($con);
+        $db=@new mysqli("localhost","root","");
+        $flag=0;
+        if ($db->connect_error)
+            die('链接错误: '. $db->connect_error);
+        $db->select_db('lab') or die('不能连接数据库');
 
 
 
-$con->close();
+//    $sql="SELECT * FROM stu  WHERE stu_id= 20171 AND password= '123456'";
+    $sql='SELECT * FROM stu  WHERE stu_id='.$user." AND password='".$pwd."';";
+
+    $result=$db->query($sql);
+    $num_users=$result->num_rows;//在数据库中搜索到符合的用户
+    if($num_users!=0){
+        //搜索到该用户
+//            echo "<h3>登录成功</h3>";
+        header("location:main.html");
+//        echo "登录成功";
+    }
+    else{
+
+        header("location:../../index.html");
+        echo "<h3>登录失败</h3>";
+        echo "alert(f)";
+    }
+
+
+    ?>
+</div>
+</body>
+</html>
