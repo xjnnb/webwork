@@ -220,7 +220,7 @@ function submit_check() {
     else {
        var confirm = window.confirm(submitInfos[2]); //弹出确认框
        if (confirm) { //判断是否确认
-           window.location.href="../index.html"; //跳转登陆界面
+           window.location.href="../common/main.html"; //跳转登陆界面
        }
     }
     document.getElementById("verifyCode").blur(); //使文本框失去焦点，避免误触发clear_verifyCodeError()

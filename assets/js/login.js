@@ -13,7 +13,7 @@ $(document).keydown(function(event) {
                 if ($('#user').val() == obj.name && $('#password').val() == obj.pwd) {//比较数据，并输出结果
                     $("#logResult").css("color","black");
                     $("#logResult").html("登录成功");
-                    setTimeout("window.location='room/room.html';", 800);//设置延时跳转
+                    setTimeout("window.location=common;", 800);//设置延时跳转
                 }
                 else {
                     $("#logResult").css("color","red");
