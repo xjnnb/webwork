@@ -19,11 +19,11 @@ $(document).ready(function(){
 
 		$toggle.click(function() {
 			if (nav_open == 1){
-				$('html').removeClass('nav_open');
+				$('common').removeClass('nav_open');
 				$toggle.removeClass('toggled');
 				nav_open = 0;
 			}  else {
-				$('html').addClass('nav_open');
+				$('common').addClass('nav_open');
 				$toggle.addClass('toggled');
 				nav_open = 1;
 			}
@@ -36,11 +36,11 @@ $(document).ready(function(){
 
 		$topbar.click(function(){
 			if (topbar_open == 1) {
-				$('html').removeClass('topbar_open');
+				$('common').removeClass('topbar_open');
 				$topbar.removeClass('toggled');
 				topbar_open = 0;
 			} else {
-				$('html').addClass('topbar_open');
+				$('common').addClass('topbar_open');
 				$topbar.addClass('toggled');
 				topbar_open = 1;
 			}

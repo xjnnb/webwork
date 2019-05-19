@@ -15,7 +15,7 @@ a:hover{
 }
 
 body{
-    background: url(images/landscape.jpg); 
+    background: url(../img/landscape.jpg);
     background-size: cover;
     position:absolute;
     width:100%;
@@ -42,7 +42,7 @@ body{
 }
 
 .user{
-    background:url(images/user.png) no-repeat;
+    background:url(../img/user.png) no-repeat;
     width: 200px;
     height: 30px;
     border:solid #555555 1px;
@@ -52,7 +52,7 @@ body{
     margin-bottom: 5px;
 }
 .password{
-    background: url(images/password.png) no-repeat;
+    background: url(../images/password.png) no-repeat;
     width: 200px;
     height: 30px;
     border:solid #555555 1px;
@@ -88,7 +88,7 @@ body{
 }
 @media all and (max-width:768px){
     body{
-        background: url(images/mobile-bg.jpg) rgba(0,0,0,0.5) repeat;
+        background: url(../images/mobile-bg.jpg) rgba(0,0,0,0.5) repeat;
     }
     main {
         display: flex;
