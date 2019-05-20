@@ -15,7 +15,7 @@ a:hover{
 }
 
 body{
-    background: url(../img/landscape.jpg);
+    background: url(../img/bigBG.png);
     background-size: cover;
     position:absolute;
     width:100%;
@@ -88,7 +88,8 @@ body{
 }
 @media all and (max-width:768px){
     body{
-        background: url(../images/mobile-bg.jpg) rgba(0,0,0,0.5) repeat;
+        background: url(../img/smallBG.png) rgba(0,0,0,0.5);
+        background-size: cover; 
     }
     main {
         display: flex;
