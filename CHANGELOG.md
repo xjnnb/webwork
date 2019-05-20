@@ -25,3 +25,7 @@
 2.Adjust Row Style
 3.main用于显示界面主要内容
 4.Adjust CSS (add main)
+
+##v1.0.4
+1.Beauty JS Codes
+2.Update signup index (html & js finished)
