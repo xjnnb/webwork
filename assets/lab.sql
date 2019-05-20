@@ -3,15 +3,15 @@
 
  Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 50617
+ Source Server Version : 50714
  Source Host           : localhost:3306
  Source Schema         : lab
 
  Target Server Type    : MySQL
- Target Server Version : 50617
+ Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 16/05/2019 20:28:15
+ Date: 20/05/2019 16:48:29
 */
 
 SET NAMES utf8mb4;
@@ -22,11 +22,16 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin`  (
-  `admin_id` int(11) NOT NULL,
-  `admin_password` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `admin_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
   `admin_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
   PRIMARY KEY (`admin_id`) USING BTREE
 ) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of admin
+-- ----------------------------
+INSERT INTO `admin` VALUES ('kShines', '123', 'kShines');
 
 -- ----------------------------
 -- Table structure for introduce
@@ -73,7 +78,7 @@ CREATE TABLE `plan`  (
 DROP TABLE IF EXISTS `stu`;
 CREATE TABLE `stu`  (
   `stu_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
-  `stu_id` int(11) NOT NULL,
+  `stu_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `sex` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
   `team_id` int(255) NULL DEFAULT NULL,
   `grade` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL COMMENT '级段',
@@ -87,12 +92,17 @@ CREATE TABLE `stu`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of stu
+-- ----------------------------
+INSERT INTO `stu` VALUES ('xjn', '20171', 'man', NULL, '2017', 'efs', 0, 1, '123');
+
+-- ----------------------------
 -- Table structure for teacher
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher`;
 CREATE TABLE `teacher`  (
   `teacher_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `teacher_id` int(11) NOT NULL,
+  `teacher_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `sex` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
   `team_id` int(11) NULL DEFAULT NULL,
   `teacher_dept` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
@@ -103,6 +113,11 @@ CREATE TABLE `teacher`  (
   INDEX `team_id`(`team_id`) USING BTREE,
   CONSTRAINT `teacher_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `team` (`team_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of teacher
+-- ----------------------------
+INSERT INTO `teacher` VALUES ('zjvivi', 'zjvivi', 'woman', NULL, 'CS', NULL, 1, '123');
 
 -- ----------------------------
 -- Table structure for team
