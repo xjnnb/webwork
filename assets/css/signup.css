@@ -17,7 +17,7 @@ a{
     color: royalblue;
 }
 body{
-    background: url(../img/landscape.jpg);
+    background: url(../img/bigBG.png);
     background-size: cover;
     position:absolute;
     left:0px;
@@ -95,14 +95,7 @@ body{
 #logoName{
     display: block;
 }
-#email{
-    width: 150px;
-}
-#phone{
-    background: url(../images/china.png) no-repeat;
-    padding-left: 30px;
-    width: 230px;
-}
+
 #mailAddress{
     display: inline;
     width: 95px;
