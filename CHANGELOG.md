@@ -16,6 +16,7 @@
 3.更新gitignore 忽略制定文件夹
 4.删除readme.txt
 5.重写index.php（unsolved）
+6.登录页面基本完成 老师部分和登录失败提醒unsolved
 
 #待完成的模块可以考虑用TODO高亮方便查看？#
 
