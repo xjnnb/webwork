@@ -14,6 +14,41 @@
 	<link rel="stylesheet" href="assets/css/login.css" type="text/css">
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 	<!--	<script type="text/javascript" src="js/login.js"></script>-->
+	<script>
+		function work() {
+			var flag=0;
+			document.getElementById("logResult").innerHTML="正在登录中…";
+			var xmlhttp;
+
+			if (window.XMLHttpRequest)
+			{// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp=new XMLHttpRequest();
+			}
+			else
+			{// code for IE6, IE5
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange=function()
+			{
+				if (xmlhttp.readyState==4 && xmlhttp.status==200)
+				{
+					flag=xmlhttp.responseText;
+					// console.log(flag);
+					// if(flag=='0') {
+					// 	document.getElementById("logResult").innerHTML = '登录失败';
+					// }
+					// else{
+					// 	window.location.href="assets/common/main.html";
+					// }
+					document.getElementById("logResult").innerHTML=flag;
+				}
+			}
+
+			xmlhttp.open("GET","/assets/common/login.php?",true);
+			xmlhttp.send();
+
+		}
+	</script>
 </head>
 
 <body>
@@ -21,13 +56,13 @@
 		<div class="main">
 			<h1 class="login">Login</h1>
 
-			<form class="section" action="assets/common/login.php" method="post">
+			<form class="section" action="" method="GET">
 				<input type="text" class="user" id="user" placeholder="Username" name="user">
 				<h5 id="userResult"></h5>
 				<input type="password" class="password" id="password" placeholder="Password" name="password">
 				<h5 id="pwdResult"></h5>
 				<h4 id="logResult"></h4>
-				<input type="submit" class="button" id="button" value="Sign in">
+				<input type="button" class="button" onclick="work()" id="button" value="Sign in">
 
 
 				<a id="signup" href="assets/common/signup.html">注册账户</a>
