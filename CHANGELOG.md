@@ -29,3 +29,6 @@
 ##v1.0.4
 1.Beauty JS Codes
 2.Update signup index (html & js finished)
+
+#v1.0.5
+1.登录界面全部完成
