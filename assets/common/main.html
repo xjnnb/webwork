@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template -->
 
-    <link href="dashboard.css" rel="stylesheet">
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
 
@@ -27,8 +27,11 @@
     <link rel="stylesheet" href="../css/demo.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-
     <![endif]-->
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
 </head>
 
 <body>
@@ -46,21 +49,8 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Sign out</a></li>
+                    <li><a href="../../index.html">Sign out</a></li>
                 </ul>
-                <!--            <form class="navbar-left navbar-form nav-search mr-md-3" action="">-->
-                <!--                <div row>-->
-                <!--                        <div class="col-lg">-->
-                <!--                            <div class="input-group">-->
-                <!--                                <input type="text" class="form-control" placeholder="Search for...">-->
-                <!--                                    <span class="input-group-btn">-->
-                <!--                                        <button class="btn btn-default" type="button">Go!</button>-->
-                <!--                                    </span>-->
-                <!--                            </div>-->
-                <!--                            &lt;!&ndash; /.input-group &ndash;&gt;-->
-                <!--                        </div>-->
-                <!--                </div>-->
-                <!--            </form>-->
             </div>
         </div>
     </nav>
@@ -112,12 +102,42 @@
 
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <form class="navbar-left navbar-form nav-search mr-md-3" action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
+                <form class="navbar-left navbar-form nav-search mr-md-3" action="" method="post">
+                    <div class="search-group">
+                        <input type="text"  placeholder="Search for..." id="searchText">
+                        <select id="seltype">
+                            <option value ="allSearch">全部</option>
+                            <option value ="id">学工号</option>
+                            <option value ="name">姓名</option>
+                            <option value="team">团队</option>
+                            <option value="dept">系别</option>
+                        </select>
+                        <span >
+                            <button  type="button" id = "searchBt">Go!</button>
                         </span>
+                    </div>
+                    <div id="selectInfo">
+                        <table>
+                            <tr>
+                                <td><label >身份</label></td>
+                                <td><label >姓名</label></td>
+                                <td><label >学工号</label></td>
+                                <td><label >系别</label></td>
+                                <td><label >团队</label></td>
+                            </tr>
+                        </table>
+
+                        <ul class="pagination">
+                            <li><a href="#">«</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a class="active" href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#">7</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
                     </div>
                     <!-- /.input-group -->
 
@@ -138,9 +158,9 @@
     </script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
 </body>
 
 </html>

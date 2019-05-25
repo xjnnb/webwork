@@ -33,7 +33,11 @@
     }
      //在管理员的表中查找用户
     $sql="SELECT * FROM admin  WHERE admin_id='".$user."' AND password='".$pwd."';";
-
+//$rs = mysql_query($sql);
+//$arr = array();
+//while($rows = mysql_fetch_array($rs)){
+//    array_push($arr,$rows);
+//}
     $result=$db->query($sql);
     $num_users=$result->num_rows;//在数据库中搜索到符合的用户
     if($num_users!=0){
@@ -44,6 +48,7 @@
         'flag'=>$flag
     ];
 //返回json数据
+
     echo json_encode($data);//输出json数据
-sleep(1);
+sleep(0.5);
     ?>

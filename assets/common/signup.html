@@ -22,24 +22,28 @@
             <form class="section" action="" method="post">
                 <h5 class="describe" id="nameDes">&emsp; &emsp;<span class="describeHighlight">*</span>姓名</h5>
                 <input type="text" class="inputs" id="name" placeholder="Enter Your Real Name"
-                onblur="check_name();" onfocus="clear_nameError();">
+                onblur="check_name();" onfocus="clear_nameError();" name="user_name">
                 <p class="results" id="nameResult"></p>
                 <p class="errors" id="nameError"></p>
+
                 <h5 class="describe" id="IDdes">&emsp;<span class="describeHighlight">*</span>学工号</h5>
                 <input type="text" class="inputs" id="ID" placeholder="Enter Your Student/Teacher ID"
-                    onblur="check_ID();" onfocus="clear_IDError();">
+                    onblur="check_ID();" onfocus="clear_IDError();" name="user_id">
                 <p class="results" id="IDResult"></p>
                 <p class="errors" id="IDError"></p>
+
                 <h5 class="describe" id="pwdDes">&emsp; &emsp;<span class="describeHighlight">*</span>密码</h5>
                 <input type="password" class="inputs" id="password" placeholder="Enter Your Password"
-                    onblur="check_pwd();" onfocus="clear_pwdError();">
+                    onblur="check_pwd();" onfocus="clear_pwdError();" name="user_password">
                 <p class="results" id="pwdResult"></p>
                 <p class="errors" id="pwdError"></p>
+
                 <h5 class="describe" id="pwdCheckDes"><span class="describeHighlight">*</span>确认密码</h5>
                 <input type="password" class="inputs" id="pwdCheck" placeholder="Confirm Your Password"
                     onblur="check_pwdAgain();" onfocus="clear_pwdAgainError();">
                 <p class="results" id="pwdCheckResult"></p>
                 <p class="errors" id="pwdCheckError"></p>
+
                 <h5 class="describe" id="verifyDes">&emsp;<span class="describeHighlight">*</span>验证码</h5>
                 <input type="text" class="inputs" id="verifyCode" placeholder="Enter the Verify Code"
                     onblur="check_verifyCode();" onfocus="clear_verifyCodeError();" onkeypress="keyTrigger();">
@@ -49,6 +53,7 @@
                 <p id="changeVerifyCode"><a onclick=change_verifyCodePhoto()>看不清？换张图片</a></p>
                 <p class="errors" id="verifyCodeError"></p>
                 <p id="checkboxTxt"><input type="checkbox" id="checkbox" />同意<a>服务条款</a>及<a>隐私政策</a></p>
+
                 <input type="button" class="button" id="button" value="注册" onclick="submit_check();">
             </form>
         </div>

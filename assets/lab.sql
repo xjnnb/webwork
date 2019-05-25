@@ -3,15 +3,15 @@
 
  Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 50723
+ Source Server Version : 50714
  Source Host           : localhost:3306
  Source Schema         : lab
 
  Target Server Type    : MySQL
- Target Server Version : 50723
+ Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 23/05/2019 12:44:41
+ Date: 20/05/2019 16:48:29
 */
 
 SET NAMES utf8mb4;
