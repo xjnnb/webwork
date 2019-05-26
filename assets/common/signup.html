@@ -1,59 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-<!--
-    Author:Xu Jianan
-    BuildDate:2019-04-10
-    Version:2.0
-    Function:lab-5 Sign Up Surface
- -->
-
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>欢迎注册</title>
-    <link rel="stylesheet" href="../css/signup.css" type="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>实验室管理系统</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/ready.css">
+	<link rel="stylesheet" href="../css/signup.css">
 </head>
-
 <body>
-    <div class="container">
-        <p id="titleTxt"><a>了解更多</a>&ensp;|&ensp;<a>反馈意见</a>&emsp;</p>
-        <div class="main">
-            <h1 class="header">欢迎注册</h1>
-            <form class="section" action="" method="post">
-                <h5 class="describe" id="nameDes">&emsp; &emsp;<span class="describeHighlight">*</span>姓名</h5>
-                <input type="text" class="inputs" id="name" placeholder="Enter Your Real Name"
-                onblur="check_name();" onfocus="clear_nameError();">
-                <p class="results" id="nameResult"></p>
-                <p class="errors" id="nameError"></p>
-                <h5 class="describe" id="IDdes">&emsp;<span class="describeHighlight">*</span>学工号</h5>
-                <input type="text" class="inputs" id="ID" placeholder="Enter Your Student/Teacher ID"
-                    onblur="check_ID();" onfocus="clear_IDError();">
-                <p class="results" id="IDResult"></p>
-                <p class="errors" id="IDError"></p>
-                <h5 class="describe" id="pwdDes">&emsp; &emsp;<span class="describeHighlight">*</span>密码</h5>
-                <input type="password" class="inputs" id="password" placeholder="Enter Your Password"
-                    onblur="check_pwd();" onfocus="clear_pwdError();">
-                <p class="results" id="pwdResult"></p>
-                <p class="errors" id="pwdError"></p>
-                <h5 class="describe" id="pwdCheckDes"><span class="describeHighlight">*</span>确认密码</h5>
-                <input type="password" class="inputs" id="pwdCheck" placeholder="Confirm Your Password"
-                    onblur="check_pwdAgain();" onfocus="clear_pwdAgainError();">
-                <p class="results" id="pwdCheckResult"></p>
-                <p class="errors" id="pwdCheckError"></p>
-                <h5 class="describe" id="verifyDes">&emsp;<span class="describeHighlight">*</span>验证码</h5>
-                <input type="text" class="inputs" id="verifyCode" placeholder="Enter the Verify Code"
-                    onblur="check_verifyCode();" onfocus="clear_verifyCodeError();" onkeypress="keyTrigger();">
-                <!--将鼠标焦点置于验证码输入框时监听键盘事件-->
-                <p class="results" id="verifyCodeResult"></p>
-                <img id="VerifyCodePhoto" src="" alt="">
-                <p id="changeVerifyCode"><a onclick=change_verifyCodePhoto()>看不清？换张图片</a></p>
-                <p class="errors" id="verifyCodeError"></p>
-                <p id="checkboxTxt"><input type="checkbox" id="checkbox" />同意<a>服务条款</a>及<a>隐私政策</a></p>
-                <input type="button" class="button" id="button" value="注册" onclick="submit_check();">
-            </form>
-        </div>
-    </div>
-    <script type="text/javascript" src="../js/signup.js"></script>
-</body>
+		<div class="row">
+			<div class="offset-md-3 col-md-6">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">实验室管理系统</div>	
+						<div class="card-category">致力于打造最好的实验室管理系统</div>
+					</div>
+					<div class="card-body">
+						<div class="form-group">
+							<label for="successInput">姓名</label>
+							<input type="text" class="form-control" id="name" placeholder="Enter your real name" 
+							onblur="check_name();" onfocus="clear_nameError();">
+							<small id="nameHelp" class="form-text text-muted">请输入您的真实姓名，不超过18个字符</small>
+                			<small class="errors" id="nameError">&emsp;</small> 
+						</div>
+						<div class="form-check">
+							<label>性别</label><br/>
+							<label class="form-radio-label">
+								<input class="form-radio-input" type="radio" name="optionsRadios" value=""  checked="">
+								<span class="form-radio-sign">Male</span>
+							</label>
+							<label class="form-radio-label ml-3">
+								<input class="form-radio-input" type="radio" name="optionsRadios" value="">
+								<span class="form-radio-sign">Female</span>
+							</label>
+						</div>
 
+						<div class="form-group" id="div1">
+							<label for="successInput">学工号</label>
+							<input type="text" class="form-control" id="ID" placeholder="Enter Your Student/Teacher ID" 
+							onblur="check_ID();" onfocus="clear_IDError();">
+							<small id="idHelp" class="form-text text-muted">学生学号以S开头，教师工号以T开头，9位长度</small>
+                			<small class="errors" id="IDError">&emsp;</small>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">系别</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>软件工程</option>
+								<option>计算机科学与技术</option>
+								<option>计算机科学与技术(师范)</option>
+								<option>计算机金融</option>
+								<option>物联网</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="password">密码</label>
+							<input type="password" class="form-control" id="password" placeholder="Enter Your Password"
+							onblur="check_pwd();" onfocus="clear_pwdError();">
+							<small id="passwordHelp" class="form-text text-muted">请输入密码，密码长度应为 6~16 个字符字母加数字组合</small>
+							<small class="errors" id="pwdError">&emsp;</small>
+						</div>
+						<div class="form-group">
+							<label for="password">确认密码</label>
+							<input type="password" class="form-control" id="pwdCheck" placeholder="Confirm Your Password"
+							onblur="check_pwdAgain();" onfocus="clear_pwdAgainError();">
+							<small id="checkPasswordHelp" class="form-text text-muted">请再次填写密码</small>
+							<small class="errors" id="pwdCheckError">&emsp;</small>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input class="form-check-input" type="checkbox" value="" id=“agreeItems”>
+								<span class="form-check-sign">Agree with terms and conditions</span>
+							</label>
+						</div>
+						<div class="card-action">
+							<button class="btn btn-success">确认</button>
+							<button class="btn btn-danger">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+<script type="text/javascript" src="../js/signup.js"></script>
+
+<script src="../js/jquery.3.2.1.min.js"></script>
+<script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 </html>

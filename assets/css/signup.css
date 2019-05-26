@@ -1,12 +1,5 @@
-/*
-Author:Xu Jianan
-BuildDate:2019-04-10
-Version:2.0
-Function:lab-5 Sign Up Surface CSS
-*/
+
 *{
-    margin:0;
-    padding: 0;
     font-family: "PingFang HK",sans-serif;
 }
 
@@ -19,101 +12,18 @@ a{
 body{
     background: url(../img/bigBG.png);
     background-size: cover;
-    position:absolute;
-    left:0px;
-    right: 0px;
-    top:0px;
-    bottom: 0px;
 }
-
-.main{
-    margin: 30px auto;
-    width: 600px;
-    background: #ffffff;
+.card{
+    margin-top:30px;
+    padding: 20px;
 }
-.header{
-    padding-top: 30px;
-    text-align:center;
-    margin-bottom: 30px;
-}
-
-.section{
+.card-header{
     text-align: center;
-    padding-left: 80px;
-    padding-right: 80px;
 }
 
-.results{
-    text-align: left;
-    padding-left: 125px;
-    font-size: 10px;
-    width: 330px;
-    height: 20px;
-    margin-bottom: 2px;
-}
 
-.errors{
-    text-align: center;
-    font-size: 10px;
-    height: 20px;
-}
 
-.inputs{
-    width: 250px;
-    height: 30px;
-    border:solid #555555 1px;
-    border-radius: 5px;
-    padding-left: 10px;
-    /*padding-left: 30px;*/
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.button{
-    width: 200px;
-    height: 30px;
-    border:solid #cccccc 1px;
-    border-radius: 5px;
-    margin-bottom: 50px;
-}
-
-.describe{
-    display: inline;
-}
-.describeHighlight{
-    color: red;
-}
-#logoAndName{
-    position:absolute;
-    text-align: center;
-    margin: 20px;
-}
-#logo{
-    height: 150px;
-    width: 150px;
-}
-#logoName{
-    display: block;
-}
-
-#mailAddress{
-    display: inline;
-    width: 95px;
-    height: 30px;
-    border:solid #555555 1px;
-    border-radius: 5px;
-}
-#checkboxTxt{
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 10px;
-}
-#titleTxt{
-    text-align: right;
-    margin: 4px;
-    font-size: 10px;
-}
-#changeVerifyCode{
+/*#changeVerifyCode{
     display: block;
     font-size: 10px;
     margin-bottom: 2px;
