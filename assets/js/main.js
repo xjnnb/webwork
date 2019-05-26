@@ -1,8 +1,7 @@
 
 $(document).ready(function(){
     $("#searchBt").click(function(){
-        var data=[{'teacher':'王老师','student':'{"name":"小明","age":"12"}'},{'teacher':'张老师','student':'{"name":"小红","age":"13"}'}];
-        console.log(data.length);
+
         var id=$("#searchText").val();
         var seltype=$("#seltype").val();
         $.post("../common/main.php",{"searchText":id,"seltype":seltype},function (data) {
@@ -21,7 +20,7 @@ $(document).ready(function(){
                     +"<td>"+json[i].team+"</td>";
                 html+='</tr>';
             }
-            // $("#selectTable").replaceWith(html);
+
             $("#selectInfoTable").html(html);
         });
     });

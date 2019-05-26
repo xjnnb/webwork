@@ -18,24 +18,60 @@ $db->select_db('lab') or die('不能连接数据库');
 mysqli_query($db, "set names 'utf8'");//设置数据库utf8编码
 $arr = array();
 
+
+$tep="";
+$len=mb_strlen($Text,'utf-8');
+for($i=0;$i<$len;$i++){
+    $cha=mb_substr($Text,$i,1,'utf-8');
+    if($i<$len-1)
+    $tep=$tep.$cha.'%';
+    else $tep=$tep.$cha;
+
+}
+
+$Text=$tep;
+//echo $Text;
+
 if($type=='allSearch'){
-    $sql="SELECT * FROM  stu;";
+
+    if($Text=="") {
+        $sql = "SELECT * FROM  stu;";
 
 
-    $rs=mysqli_query($db,$sql);
-    while($rows = mysqli_fetch_array($rs)){
-        array_push($arr,$rows);
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
+
+
+        $sql = "SELECT * FROM teacher ;";
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
     }
-    $sql="SELECT * FROM teacher ;";
-    $rs=mysqli_query($db,$sql);
-    while($rows = mysqli_fetch_array($rs)){
-        array_push($arr,$rows);
+    else{
+        $sql="SELECT * FROM stu  WHERE (stu_id like '%".$Text."%' ) or(stu_name like '%".$Text."%') or(stu_dept like '%".$Text."%') or(stu_name like '%".$Text."%')or (team_id=(SELECT team_id from team WHERE team_name  like '%".$Text."%'));";
+        $rs=mysqli_query($db,$sql);
+        while($row = mysqli_fetch_array($rs)){
+            array_push($arr,$row);
+        }
+        $sql="SELECT * FROM teacher  WHERE (teacher_id like '%".$Text."%' ) or(teacher_name like '%".$Text."%') or(teacher_dept like '%".$Text."%') or(teacher_name like '%".$Text."%')or (team_id=(SELECT team_id from team WHERE team_name  like '%".$Text."%'));";
+        $rs=mysqli_query($db,$sql);
+        while($row = mysqli_fetch_array($rs)){
+            array_push($arr,$row);
+        }
+
+
     }
+
+
+
 }else if($type=="id"){
 
     $sql="SELECT * FROM stu  WHERE stu_id like '%".$Text."%'";
     $rs=mysqli_query($db,$sql);
-    if($rs)
+
     while($row = mysqli_fetch_array($rs)){
         array_push($arr,$row);
     }
@@ -93,11 +129,11 @@ for($i=0; $i<count($arr);$i++){
     }
 
     if($statue=='T'){
-        $brr[]=array("statue"=>"teacher","name"=>$arr[$i][0],"id"=>$arr[$i][1],"dept"=>$arr[$i][4],"team"=>$arr[$i]["team_name"]);
+        $brr[]=array("statue"=>"老师","name"=>$arr[$i][0],"id"=>$arr[$i][1],"dept"=>$arr[$i][4],"team"=>$arr[$i]["team_name"]);
     }else{
-        $brr[]=array("statue"=>"student","name"=>$arr[$i][0],"id"=>$arr[$i][1],"dept"=>$arr[$i][5],"team"=>$arr[$i]["team_name"]);
+        $brr[]=array("statue"=>"学生","name"=>$arr[$i][0],"id"=>$arr[$i][1],"dept"=>$arr[$i][5],"team"=>$arr[$i]["team_name"]);
     }
 }
-//echo json_encode($arr);//输出json数据
+
     echo json_encode($brr);//输出json数据
 ?>
