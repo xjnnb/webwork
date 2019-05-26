@@ -26,4 +26,6 @@ label{
     width:120px;height:24px;display:block;float:left;line-height:22px;color:#616161;padding-left:18px;margin-right:5px;
 }
 table{border:1px solid #F00}
-td{border:1px solid #F00}
+td{
+    width:120px;height:24px;
+    border:1px solid #F00}

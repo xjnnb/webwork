@@ -9,18 +9,20 @@ $(document).ready(function(){
             var html="";
             console.log(data);
             console.log((data.length));
-            // console.log("debug");
-            for(var i = 1 ; i<data.length;i++){
+            var json = JSON.parse(data);
+             console.log(json.length);
+             console.log(json);
+            for(var i = 0 ; i<json.length;i++){
                 html+='<tr>';
-                html+="<td>"+data[i].status+"</td>"
-                    +"<td>"+data[i].name+"</td>"
-                    +"<td>"+data[i].id+"</td>"
-                    +"<td>"+data[i].dept+"</td>"
-                    +"<td>"+data[i].team+"</td>";
+                html+="<td>"+json[i].statue+"</td>"
+                    +"<td>"+json[i].name+"</td>"
+                    +"<td>"+json[i].id+"</td>"
+                    +"<td>"+json[i].dept+"</td>"
+                    +"<td>"+json[i].team+"</td>";
                 html+='</tr>';
             }
-
-            $("#selectInfo").append(html);
+            // $("#selectTable").replaceWith(html);
+            $("#selectInfoTable").html(html);
         });
     });
 });
