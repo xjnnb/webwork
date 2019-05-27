@@ -3,15 +3,15 @@
 
  Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 50617
+ Source Server Version : 50723
  Source Host           : localhost:3306
  Source Schema         : lab
 
  Target Server Type    : MySQL
- Target Server Version : 50617
+ Target Server Version : 50723
  File Encoding         : 65001
 
- Date: 26/05/2019 14:08:33
+ Date: 27/05/2019 18:42:24
 */
 
 SET NAMES utf8mb4;
@@ -92,9 +92,18 @@ CREATE TABLE `stu`  (
 -- ----------------------------
 -- Records of stu
 -- ----------------------------
-INSERT INTO `stu` VALUES ('虚假男', 'S20170001', 'man', '2', '2017', '计算机科学', '0', '1', '123');
-INSERT INTO `stu` VALUES ('预赛抗', 'S20170002', 'man', '1', '2017', '计算机科学', '0', '1', '123');
-INSERT INTO `stu` VALUES ('温蒂斐', 'S20170003', 'woman', '2', '2017', '软件工程', '0', '1', '123');
+INSERT INTO `stu` VALUES ('黄鹂', 'S20120004', 'woman', '1', '大二', '计算机科学与技术', '0', '1', '123');
+INSERT INTO `stu` VALUES ('虚假男', 'S20170001', 'man', '2', '大二', '计算机科学与技术', '0', '1', '123');
+INSERT INTO `stu` VALUES ('预赛抗', 'S20170002', 'man', '1', '大二', '计算机科学与技术', '0', '1', '123');
+INSERT INTO `stu` VALUES ('温蒂斐', 'S20170003', 'woman', '2', '大二', '软件工程', '0', '1', '123');
+INSERT INTO `stu` VALUES ('落威冰', 'S20170005', 'Male', '0', '大一', '软件工程', '0', '0', 'ysk123');
+INSERT INTO `stu` VALUES ('落威冰', 'S20170006', 'Male', '0', '大二', '软件工程', '0', '0', 'qqq111');
+INSERT INTO `stu` VALUES ('落威冰', 'S20170011', 'Male', '0', '大一', '软件工程', '0', '0', 'qqq111');
+INSERT INTO `stu` VALUES ('落威冰', 'S20170012', 'Male', '0', '大一', '软件工程', '0', '0', 'QQQ111');
+INSERT INTO `stu` VALUES ('落威冰', 'S20170020', 'Male', '0', '大一', '软件工程', '0', '0', 'QQQ111');
+INSERT INTO `stu` VALUES ('落威冰', 'S20170056', 'Male', '0', '大一', '软件工程', '0', '0', 'ysk111');
+INSERT INTO `stu` VALUES ('落威冰', 'S20170273', 'Male', '0', '大一', '软件工程', '0', '0', 'qqq111');
+INSERT INTO `stu` VALUES ('落威冰', 'S20171111', 'Male', '0', '大一', '软件工程', '0', '0', 'QQQ111');
 
 -- ----------------------------
 -- Table structure for teacher
