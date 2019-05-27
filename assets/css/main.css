@@ -21,6 +21,12 @@ ul.pagination li a.active {
 
 ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 
+#leftPane{
+    padding-top: 51px;
+}
+.main{
+    padding-top: 51px;
+}
 
 label{
     width:120px;height:24px;display:block;float:left;line-height:22px;color:#616161;padding-left:18px;margin-right:5px;
