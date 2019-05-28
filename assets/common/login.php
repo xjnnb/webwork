@@ -8,7 +8,7 @@
     }
 
     header('Content-Type: text/html;charset=utf-8');
-    $db=@new mysqli("localhost","root","123456");
+    $db=@new mysqli("localhost","root","");
     $flag=0;
     if ($db->connect_error)
         die('链接错误: '. $db->connect_error);

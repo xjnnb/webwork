@@ -12,7 +12,7 @@ $dept=$_POST['dept'];
 
 
 
-    $db = @new mysqli("localhost", "root", "123456");
+    $db = @new mysqli("localhost", "root", "");
 //    $db=mysqli_connect("localhost","root","","lab");
     if ($db->connect_error)
         die('链接错误: ' . $db->connect_error);
