@@ -1,20 +1,13 @@
 <?php
 include "connect.php";
 
-
 $Text = $_POST["searchText"];
 $type = $_POST["seltype"];
-//echo $Text;
-//ECHO $type;
 if($Text==null&&$type !="allSearch"){
-    header("location:/main.html");//直接打开该php文件，跳转到登录界面
+    header("location:/mainPage.php");//直接打开该php文件，跳转到登录界面
 }
 
-
-
-
 $arr = array();
-
 
 $tep="";
 $len=mb_strlen($Text,'utf-8');

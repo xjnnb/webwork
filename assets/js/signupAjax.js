@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $("#okBtn").click(function(){
         var name=$("#name").val();
@@ -6,12 +5,6 @@ $(document).ready(function(){
         var id=$("#ID").val();
         var dept=$("#exampleFormControlSelect1").val();
         var password=$("#password").val();
-        // console.log(name);
-        // console.log(sex);
-        // console.log(id);
-        // console.log(dept);
-        // console.log(password);
-
         $.post("../common/signup.php",{"name":name,"sex":sex,"id":id,"dept":dept,"password":password},function (data) {
             console.log("DEBUG");
             var json = JSON.parse(data);
@@ -23,7 +16,6 @@ $(document).ready(function(){
             else{
                 $('#IDError').html("该学号已经被注册");
             }
-            // console.log(json[0].result);
         });
     });
 });

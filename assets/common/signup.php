@@ -14,9 +14,6 @@ $introduce_id='0';//默认为0  空介绍
 $dept=$_POST['dept'];
 
 
-
-
-
 $flag = '0';//用于判断
 
 
@@ -54,18 +51,14 @@ if ($flag == '0') {
                 $grade = '大一';
         }
         $sql = "insert into stu values  ('".$name."','".$id."','".$sex."','".$team."','".$grade."','".$dept."','".$introduce_id."','".$is_ok."','".$password."');";
-//            $sql = "insert into stu values  (".$name.",".$id .",".$sex.",".$team. "," . $grade . "," . $dept . "," . $introduce_id . "," . $is_ok . "," . $password . ");";
         $rs = mysqli_query($db, $sql);
-
-
-        }
+    }
     else {
         $sql = "insert into teacher values  ('".$name."','".$id."','".$sex."','".$team."','".$dept."','".$introduce_id."','".$is_ok."','".$password."');";
-//            $sql = "insert into teacher values  (" . $name . "," . $id . "," . $sex . "," . $team . "," . $dept . "," . $introduce_id . "," . $is_ok . "," . $password . ");";
         $rs = mysqli_query($db, $sql);
-
     }
 }
+
 $arr = array();
 $arr[] = array("result" => $flag);
 echo json_encode($arr);

@@ -9,8 +9,6 @@
     }
 
 
-
-
     //在学生的表中查找用户
     $sql="SELECT * FROM stu  WHERE stu_id='".$user."' AND password='".$pwd."';";
 

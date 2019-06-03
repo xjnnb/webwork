@@ -2054,7 +2054,7 @@ body {
   opacity: 0;
 }
 .main-header .logo-header .navbar-toggler .navbar-toggler-icon {
-  background: url(../img/menu2.png);
+  background: url(../../img/menu2.png);
   background-size: cover;
   height: 1em;
   width: 1em;
@@ -2259,15 +2259,15 @@ body {
 
 @font-face {
   font-family: LineAwesome;
-  src: url(../fonts/line-awesome.eot?v=1.1.);
-  src: url(../fonts/line-awesome.eot??v=1.1.#iefix) format("embedded-opentype"), url(../fonts/line-awesome.woff2?v=1.1.) format("woff2"), url(../fonts/line-awesome.woff?v=1.1.) format("woff"), url(../fonts/line-awesome.ttf?v=1.1.) format("truetype"), url(../fonts/line-awesome.svg?v=1.1.#fa) format("svg");
+  src: url(../../fonts/line-awesome.eot?v=1.1.);
+  src: url(../../fonts/line-awesome.eot??v=1.1.#iefix) format("embedded-opentype"), url(../../fonts/line-awesome.woff2?v=1.1.) format("woff2"), url(../../fonts/line-awesome.woff?v=1.1.) format("woff"), url(../../fonts/line-awesome.ttf?v=1.1.) format("truetype"), url(../../fonts/line-awesome.svg?v=1.1.#fa) format("svg");
   font-weight: 400;
   font-style: normal;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: LineAwesome;
-    src: url(../fonts/line-awesome.svg?v=1.1.#fa) format("svg");
+    src: url(../../fonts/line-awesome.svg?v=1.1.#fa) format("svg");
   }
 }
 .la {

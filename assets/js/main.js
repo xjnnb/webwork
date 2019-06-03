@@ -1,19 +1,11 @@
 
 $(document).ready(function(){
     $("#searchBt").click(function(){
-
         var id=$("#searchText").val();
         var seltype=$("#seltype").val();
-        console.log("debug");
-        console.log(id);
-        console.log(seltype);
         $.post("../common/main.php",{"searchText":id,"seltype":seltype},function (data) {
             var html="";
-            console.log(data);
-            console.log((data.length));
             var json = JSON.parse(data);
-             console.log(json.length);
-             console.log(json);
             for(var i = 0 ; i<json.length;i++){
                 if(json[i].state==1){
                     json[i].state="已审核";

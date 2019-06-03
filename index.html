@@ -1,60 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
-    Author:Xu Jianan
-    BuildDate:2019-04-24
-    Version:·.0
-    Function:lab-7 Roommates Login Surface Link to JQuery
- -->
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>欢迎使用 实验室管理系统</title>
 	<link rel="stylesheet" href="assets/css/login.css" type="text/css">
-	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-	<script>
-        $(function () {
-
-            $("#button").click(function(){
-
-				document.getElementById("logResult").innerHTML="正在登录中";
-
-                $.ajax({
-                    url:"./assets/common/login.php",
-                    type:"POST",
-                    data:{
-                        "user":$("#user").val(),
-                        "password":$("#password").val()
-                    },
-
-                    dataType:"json",
-
-                    success:function (data) {
-                    	if((data['flag'])=='0'){
-
-                    		document.getElementById("logResult").innerHTML="登陆失败";
-							// $("#logResult").html("W3School");
-						}else{
-							window.location.href='/assets/common/main.html';
-						}
-                    },
-                    error:function () {
-
-					}
-                })
-
-
-            })
-        })
-	</script>
 </head>
 
 <body>
 	<div class="container">
 		<div class="main">
 			<h1 class="login">Login</h1>
-
 			<form class="section" action="" >
 				<input type="text" class="user" id="user" placeholder="Username" name="user">
 				<h5 id="uesrResult"></h5>
@@ -62,11 +18,11 @@
 				<h5 id="pwdResult"></h5>
 				<h4 id="logResult"></h4>
 				<input type="button" class="button"  id="button" value="Sign in">
-
-				<a id="signup" href="assets/common/signup.html">注册账户</a>
+				<a id="signup" href="assets/common/signupPage.php">注册账户</a>
 			</form>
 		</div>
 	</div>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/login.js"></script>
 </body>
-
 </html>

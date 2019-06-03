@@ -8,7 +8,7 @@ $type = $_POST["seltype"];
 //echo $Text;
 //ECHO $type;
 if($Text==null&&$type !="allSearch"){
-    header("location:/billboard.html");//直接打开该php文件，跳转到登录界面
+    header("location:/billboardPage.php");//直接打开该php文件，跳转到登录界面
 }
 
 

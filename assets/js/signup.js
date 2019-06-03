@@ -244,48 +244,6 @@ $('#name').focus(function () {
 //
 //     //登陆
 //
-//     //登陆按钮检测
-//     $("#loginBut").click(function() { //密码用户名核对
-//         $.getJSON("static/users.json", function(json) {
-//             $.each(json, function(index, obj) {
-//                 if ($('#userName').val() == obj.name && $('#userPw').val() == obj.pwd) {
-//                     $('#logInfo').html("登录成功");
-//                     $('#logInfo').css('color', 'green');
-//                     $('#logInfo').css('visibility', 'visible');
-//                     setTimeout("window.location='card/card.html';", 1000)
-//                 } else {
-//                     $('#logInfo').css('color', 'red');
-//                     $('#logInfo').html("登录失败");
-//                     $('#logInfo').css('visibility', 'visible');
-//                 }
-//             })
-//         })
-//     });
-//
-//     //回车登陆检测
-//     $('#userPw').keydown(function() {
-//         if (event.keyCode == 13) { // 13为回车键
-//             $.getJSON("static/users.json", function(json) {//getJSON() 方法使用 AJAX 的 HTTP GET 请求获取 JSON 数据
-//                 $.each(json, function(index, obj) {//each() 方法为每个匹配元素规定要运行的函数
-//                     if ($('#userName').val() == obj.name && $('#userPw').val() == obj.pwd) {
-//                         $('#logInfo').html("登录成功");
-//                         $('#logInfo').css('color', 'green');
-//                         $('#logInfo').css('visibility', 'visible');
-//                         setTimeout("window.location='card/card.html';", 1000)
-//                     } else {
-//                         $('#logInfo').css('color', 'red');
-//                         $('#logInfo').html("登录失败");
-//                         $('#logInfo').css('visibility', 'visible');
-//                     }
-//                 })
-//             })
-//         }
-//     });
-//
-//
-//
-//     //注册
-//
 //     $('#registBut').click(function(){
 //         window.location.href = "register/register.html";
 //     });
