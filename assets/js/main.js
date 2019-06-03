@@ -15,26 +15,24 @@ $(document).ready(function(){
              console.log(json.length);
              console.log(json);
             for(var i = 0 ; i<json.length;i++){
+                if(json[i].state==1){
+                    json[i].state="已审核";
+                }else{
+                    json[i].state="未审核";
+                }
                 html+='<tr>';
-                html+="              <td>\n" +
-                    "                                                        <div class=\"form-check\">\n" +
-                    "                                                            <label class=\"form-check-label\">\n" +
-                    "                                                                <input class=\"form-check-input task-select\" type=\"checkbox\">\n" +
-                    "                                                                <span class=\"form-check-sign\"></span>\n" +
-                    "                                                            </label>\n" +
-                    "                                                        </div>\n" +
-                    "                                                    </td>";
                 html+="<td>"+json[i].statue+"</td>"
                     +"<td>"+json[i].name+"</td>"
                     +"<td>"+json[i].id+"</td>"
                     +"<td>"+json[i].dept+"</td>"
-                    +"<td>"+json[i].team+"</td>";
+                    +"<td>"+json[i].team+"</td>"
+                    +"<td>"+json[i].state+"</td>";
                 html+='<td>\n' +
 '                                                        <div class="form-button-action">\n' +
-'                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link <btn-simple-primary" data-original-title="Edit Task">\n' +
+'                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link <btn-simple-primary" data-original-title="Edit Task" id="editBtn">\n' +
 '                                                            <i class="la la-edit"></i>\n' +
 '                                                        </button>\n' +
-'                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-simple-danger" data-original-title="Remove">\n' +
+'                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-simple-danger" data-original-title="Remove" id="deleteBtn">\n' +
 '                                                            <i class="la la-times"></i>\n' +
 '                                                        </button>\n' +
 '                                                        </div>\n' +

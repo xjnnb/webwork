@@ -1,6 +1,7 @@
 <?php
-header("content-type:text/html;charset=utf-8");
-header('Content-Type:text/html;charset=utf-8;');
+include "connect.php";
+
+
 $Text = $_POST["searchText"];
 $type = $_POST["seltype"];
 //echo $Text;
@@ -9,13 +10,7 @@ if($Text==null&&$type !="allSearch"){
     header("location:/main.html");//直接打开该php文件，跳转到登录界面
 }
 
-header('Content-Type: text/html;charset=utf-8');
 
-$db=@new mysqli("localhost","root","123456");
-if ($db->connect_error)
-    die('链接错误: '. $db->connect_error);
-$db->select_db('lab') or die('不能连接数据库');
-mysqli_query($db, "set names 'utf8'");//设置数据库utf8编码
 
 
 $arr = array();
@@ -131,9 +126,9 @@ for($i=0; $i<count($arr);$i++){
     }
 
     if($statue=='T'){
-        $brr[]=array("statue"=>"老师","name"=>$arr[$i][0],"id"=>$arr[$i][1],"dept"=>$arr[$i][4],"team"=>$arr[$i]["team_name"]);
+        $brr[]=array("statue"=>"老师","name"=>$arr[$i][0],"id"=>$arr[$i][1],"dept"=>$arr[$i][4],"team"=>$arr[$i]["team_name"],"state"=>$arr[$i][6]);
     }else{
-        $brr[]=array("statue"=>"学生","name"=>$arr[$i][0],"id"=>$arr[$i][1],"dept"=>$arr[$i][5],"team"=>$arr[$i]["team_name"]);
+        $brr[]=array("statue"=>"学生","name"=>$arr[$i][0],"id"=>$arr[$i][1],"dept"=>$arr[$i][5],"team"=>$arr[$i]["team_name"],"state"=>$arr[$i][7]);
     }
 }
 

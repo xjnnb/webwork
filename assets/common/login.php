@@ -1,4 +1,5 @@
  <?php
+    include "connect.php";
 
     $user = $_POST["user"];
     $pwd = $_POST["password"];
@@ -7,12 +8,7 @@
         header("location:../../index.html");//直接打开该php文件，跳转到登录界面
     }
 
-    header('Content-Type: text/html;charset=utf-8');
-    $db=@new mysqli("localhost","root","123456");
-    $flag=0;
-    if ($db->connect_error)
-        die('链接错误: '. $db->connect_error);
-    $db->select_db('lab') or die('不能连接数据库');
+
 
 
     //在学生的表中查找用户
@@ -44,9 +40,7 @@
         $flag=3;
     }
 //    组装json
-    $data=[
-        'flag'=>$flag
-    ];
+    $data['flag']=$flag;
 //返回json数据
 
     echo json_encode($data);//输出json数据

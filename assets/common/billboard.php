@@ -1,5 +1,8 @@
 <?php
-header("content-type:text/html;charset=utf-8");
+
+include "connect.php";
+
+
 $Text = $_POST["searchText"];
 $type = $_POST["seltype"];
 //echo $Text;
@@ -8,11 +11,7 @@ if($Text==null&&$type !="allSearch"){
     header("location:/billboard.html");//直接打开该php文件，跳转到登录界面
 }
 
-$db=@new mysqli("localhost","root","123456");
-if ($db->connect_error)
-    die('链接错误: '. $db->connect_error);
-$db->select_db('lab') or die('不能连接数据库');
-mysqli_query($db, "set names 'utf8'");//设置数据库utf8编码
+
 
 $arr = array();
 

@@ -1,7 +1,5 @@
 <?php
-header('Content-Type: text/html;charset=utf-8');
-
-
+include "connect.php";
 
 
 ///////////////data
@@ -14,18 +12,6 @@ $password=$_POST['password'];//1
 $is_ok='0';//默认未审核  1为审核通过  未通过则直接删除
 $introduce_id='0';//默认为0  空介绍
 $dept=$_POST['dept'];
-
-
-
-//////////////connect db
-//    $db=mysqli_connect("localhost","root","","lab");
-$db = @new mysqli("localhost", "root", "123456");
-if ($db->connect_error)
-    die('链接错误: ' . $db->connect_error);
-$db->select_db('lab') or die('不能连接数据库');
-
-mysqli_query($db, "set names 'utf8'");//设置数据库utf8编码
-
 
 
 
