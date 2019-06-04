@@ -4,13 +4,8 @@ include "connect.php";
 
 
 $Text = $_POST["searchText"];
-$type = $_POST["seltype"];
-//echo $Text;
-//ECHO $type;
-if($Text==null&&$type !="allSearch"){
-    header("location:/billboardPage.php");//直接打开该php文件，跳转到登录界面
-}
-
+$seltype = $_POST["seltype"];
+$seltime = $_POST["seltime"];
 
 
 $arr = array();
@@ -25,9 +20,9 @@ for($i=0;$i<$len;$i++){
 }
 
 $Text=$tep;
-//echo $Text;
 
-if($type=='allSearch') {
+
+if($seltype=='allSearch' and $seltime=='allSearch') {
 
     if ($Text == "") {
         $sql = "SELECT * FROM  notice;";
@@ -47,49 +42,232 @@ if($type=='allSearch') {
 
     }
 
+}else if($seltype=='match' and $seltime=='allSearch') {
+
+    if ($Text == "") {
+        $sql = "SELECT * FROM  notice WHERE notice_type='比赛通知';";
+
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
+
+    }
+    else {
+        $sql = "SELECT * FROM notice  WHERE notice_type='比赛通知'AND (notice_id like '%" . $Text . "%' ) or(notice_name like '%" . $Text . "%') or(notice_type like '%" . $Text . "%') or(notice_date like '%" . $Text . "%' ) or(text like '%" . $Text . "%');";
+        $rs = mysqli_query($db, $sql);
+        while ($row = mysqli_fetch_array($rs)) {
+            array_push($arr, $row);
+        }
+
+    }
+
+}else if($seltype=='activity' and $seltime=='allSearch') {
+
+    if ($Text == "") {
+        $sql = "SELECT * FROM  notice WHERE notice_type='活动通知';";
+
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
+
+    }
+    else {
+        $sql = "SELECT * FROM notice  WHERE notice_type='活动通知'AND (notice_id like '%" . $Text . "%' ) or(notice_name like '%" . $Text . "%') or(notice_type like '%" . $Text . "%') or(notice_date like '%" . $Text . "%' ) or(text like '%" . $Text . "%');";
+        $rs = mysqli_query($db, $sql);
+        while ($row = mysqli_fetch_array($rs)) {
+            array_push($arr, $row);
+        }
+
+    }
+
+}else if($seltype=='allSearch' and $seltime=='week') {
+
+    if ($Text == "") {
+        $sql = "SELECT * FROM  notice WHERE notice_date between  current_date()-7 and sysdate();";
+
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
+
+    }
+    else {
+        $sql = "SELECT * FROM notice  WHERE notice_date between  current_date()-7 and sysdate() and (notice_id like '%" . $Text . "%' ) or(notice_name like '%" . $Text . "%') or(notice_type like '%" . $Text . "%') or(notice_date like '%" . $Text . "%' ) or(text like '%" . $Text . "%');";
+        $rs = mysqli_query($db, $sql);
+        while ($row = mysqli_fetch_array($rs)) {
+            array_push($arr, $row);
+        }
+
+    }
+
+}else if($seltype=='match' and $seltime=='week') {
+
+    if ($Text == "") {
+        $sql = "SELECT * FROM  notice WHERE notice_date between  current_date()-7 and sysdate() and notice_type='比赛通知';";
+
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
+
+    }
+    else {
+        $sql = "SELECT * FROM notice  WHERE  notice_date between  current_date()-7 and sysdate() and  notice_type='比赛通知' AND (notice_id like '%" . $Text . "%' ) or(notice_name like '%" . $Text . "%') or(notice_type like '%" . $Text . "%') or(notice_date like '%" . $Text . "%' ) or(text like '%" . $Text . "%');";
+        $rs = mysqli_query($db, $sql);
+        while ($row = mysqli_fetch_array($rs)) {
+            array_push($arr, $row);
+        }
+
+    }
+
+}else if($seltype=='activity' and $seltime=='week') {
+
+    if ($Text == "") {
+        $sql = "SELECT * FROM  notice WHERE notice_date between  current_date()-7 and sysdate() and notice_type='活动通知';";
+
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
+
+    }
+    else {
+        $sql = "SELECT * FROM notice  WHERE notice_date between  current_date()-7 and sysdate() and  notice_type='活动通知'AND (notice_id like '%" . $Text . "%' ) or(notice_name like '%" . $Text . "%') or(notice_type like '%" . $Text . "%') or(notice_date like '%" . $Text . "%' ) or(text like '%" . $Text . "%');";
+        $rs = mysqli_query($db, $sql);
+        while ($row = mysqli_fetch_array($rs)) {
+            array_push($arr, $row);
+        }
+
+    }
+
+}else if($seltype=='allSearch' and $seltime=='month') {
+
+    if ($Text == "") {
+        $sql = "SELECT * FROM  notice WHERE notice_date between  current_date()-30 and sysdate();";
+
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
+
+    }
+    else {
+        $sql = "SELECT * FROM notice  WHERE notice_date between  current_date()-30 and sysdate() and (notice_id like '%" . $Text . "%' ) or(notice_name like '%" . $Text . "%') or(notice_type like '%" . $Text . "%') or(notice_date like '%" . $Text . "%' ) or(text like '%" . $Text . "%');";
+        $rs = mysqli_query($db, $sql);
+        while ($row = mysqli_fetch_array($rs)) {
+            array_push($arr, $row);
+        }
+
+    }
+
+}else if($seltype=='match' and $seltime=='month') {
+
+    if ($Text == "") {
+        $sql = "SELECT * FROM  notice WHERE notice_date between  current_date()-30 and sysdate() and notice_type='比赛通知';";
+
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
+
+    }
+    else {
+        $sql = "SELECT * FROM notice  WHERE  notice_date between  current_date()-30 and sysdate() and  notice_type='比赛通知' AND (notice_id like '%" . $Text . "%' ) or(notice_name like '%" . $Text . "%') or(notice_type like '%" . $Text . "%') or(notice_date like '%" . $Text . "%' ) or(text like '%" . $Text . "%');";
+        $rs = mysqli_query($db, $sql);
+        while ($row = mysqli_fetch_array($rs)) {
+            array_push($arr, $row);
+        }
+
+    }
+
+}else if($seltype=='activity' and $seltime=='month') {
+
+    if ($Text == "") {
+        $sql = "SELECT * FROM  notice WHERE notice_date between  current_date()-30 and sysdate() and notice_type='活动通知';";
+
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
+
+    }
+    else {
+        $sql = "SELECT * FROM notice  WHERE notice_date between  current_date()-30 and sysdate() and  notice_type='活动通知'AND (notice_id like '%" . $Text . "%' ) or(notice_name like '%" . $Text . "%') or(notice_type like '%" . $Text . "%') or(notice_date like '%" . $Text . "%' ) or(text like '%" . $Text . "%');";
+        $rs = mysqli_query($db, $sql);
+        while ($row = mysqli_fetch_array($rs)) {
+            array_push($arr, $row);
+        }
+
+    }
+
+}else if($seltype=='allSearch' and $seltime=='year') {
+
+    if ($Text == "") {
+        $sql = "SELECT * FROM  notice WHERE notice_date between  current_date()-365 and sysdate();";
+
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
+
+    }
+    else {
+        $sql = "SELECT * FROM notice  WHERE notice_date between  current_date()-365 and sysdate() and (notice_id like '%" . $Text . "%' ) or(notice_name like '%" . $Text . "%') or(notice_type like '%" . $Text . "%') or(notice_date like '%" . $Text . "%' ) or(text like '%" . $Text . "%');";
+        $rs = mysqli_query($db, $sql);
+        while ($row = mysqli_fetch_array($rs)) {
+            array_push($arr, $row);
+        }
+
+    }
+
+}else if($seltype=='match' and $seltime=='year') {
+
+    if ($Text == "") {
+        $sql = "SELECT * FROM  notice WHERE notice_date between  current_date()-365 and sysdate() and notice_type='比赛通知';";
+
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
+
+    }
+    else {
+        $sql = "SELECT * FROM notice  WHERE  notice_date between  current_date()-365 and sysdate() and  notice_type='比赛通知' AND (notice_id like '%" . $Text . "%' ) or(notice_name like '%" . $Text . "%') or(notice_type like '%" . $Text . "%') or(notice_date like '%" . $Text . "%' ) or(text like '%" . $Text . "%');";
+        $rs = mysqli_query($db, $sql);
+        while ($row = mysqli_fetch_array($rs)) {
+            array_push($arr, $row);
+        }
+
+    }
+
+}else if($seltype=='activity' and $seltime=='year') {
+
+    if ($Text == "") {
+        $sql = "SELECT * FROM  notice WHERE notice_date between  current_date()-365 and sysdate() and notice_type='活动通知';";
+
+        $rs = mysqli_query($db, $sql);
+        while ($rows = mysqli_fetch_array($rs)) {
+            array_push($arr, $rows);
+        }
+
+    }
+    else {
+        $sql = "SELECT * FROM notice  WHERE notice_date between  current_date()-365 and sysdate() and  notice_type='活动通知'AND (notice_id like '%" . $Text . "%' ) or(notice_name like '%" . $Text . "%') or(notice_type like '%" . $Text . "%') or(notice_date like '%" . $Text . "%' ) or(text like '%" . $Text . "%');";
+        $rs = mysqli_query($db, $sql);
+        while ($row = mysqli_fetch_array($rs)) {
+            array_push($arr, $row);
+        }
+
+    }
+
 }
 
 
-else if($type=="id") {
 
-    $sql = "SELECT * FROM notice  WHERE notice_id like '%" . $Text . "%'";
-    $rs = mysqli_query($db, $sql);
 
-    while ($row = mysqli_fetch_array($rs)) {
-        array_push($arr, $row);
-    }
-
-}else if($type=="name"){
-    $sql="SELECT * FROM notice  WHERE notice_name like '%".$Text."%'";
-    $rs=mysqli_query($db,$sql);
-    while($row = mysqli_fetch_array($rs)){
-        array_push($arr,$row);
-    }
-
-}else if($type=="date"){
-    $sql="SELECT * FROM notice  WHERE notice_date like '%".$Text."%';";
-    $rs=mysqli_query($db,$sql);
-    while($row = mysqli_fetch_array($rs)){
-        array_push($arr,$row);
-    }
-
-}else if($type=="type"){
-    $sql="SELECT * FROM notice  WHERE notice_type like '%".$Text."%';";
-    $rs=mysqli_query($db,$sql);
-    while($row = mysqli_fetch_array($rs)){
-        array_push($arr,$row);
-    }
-
-}else if($type=="text"){
-    $sql="SELECT * FROM notice  WHERE text like '%".$Text."%';";
-    $rs=mysqli_query($db,$sql);
-    while($row = mysqli_fetch_array($rs)){
-        array_push($arr,$row);
-    }
-
-}
-
-$brr= array();
+    $brr= array();
 for($i=0; $i<count($arr);$i++){
 
     $brr[]=array("id"=>$arr[$i][0],"name"=>$arr[$i][1],"date"=>$arr[$i][2],"type"=>$arr[$i][3],"text"=>$arr[$i][4]);

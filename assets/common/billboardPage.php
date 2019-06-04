@@ -38,9 +38,9 @@
                                         <div class="col-lg-2 col-md-2 col-sm-2 ">
                                             <select class="form-control" id="seltime">
                                                 <option value ="allSearch">全部</option>
-                                                <option value ="id">近一周内</option>
-                                                <option value ="name">近一月内</option>
-                                                <option value="team">近一年内</option>
+                                                <option value ="week">近一周内</option>
+                                                <option value ="month">近一月内</option>
+                                                <option value="year">近一年内</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-1 col-md-1 col-sm-1 text-right">
@@ -49,10 +49,8 @@
                                         <div class="col-lg-2 col-md-3 col-sm-2">
                                             <select class="form-control" id="seltype">
                                                 <option value ="allSearch">全部</option>
-                                                <option value ="id">通知类别</option>
-                                                <option value ="name">通知类别</option>
-                                                <option value="team">通知类别</option>
-                                                <option value="dept">通知类别</option>
+                                                <option value ="match">比赛通知</option>
+                                                <option value ="activity">活动通知</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-4 text-right col-lg-offset-1">
@@ -63,7 +61,7 @@
                                         </div>
                                     </div>
                                     <table class="table table-typo">
-                                        <tbody>
+                                        <tbody id="selectInfoTable">
                                         <tr>
                                             <td>
                                                 <p>动词打次类</p>
@@ -100,7 +98,7 @@
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="../js/sets/ready.min.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/billboard.js"></script>
 </body>
 
 </html>

@@ -2,10 +2,10 @@
 $(document).ready(function(){
     $("#searchBt").click(function(){
         console.log("success");
-
-        var id=$("#searchText").val();
+        var seltime=$("#seltime").val();
+        var searchText=$("#searchText").val();
         var seltype=$("#seltype").val();
-        $.post("../common/billboard.php",{"searchText":id,"seltype":seltype},function (data) {
+        $.post("../common/billboard.php",{"seltime":seltime,"searchText":searchText,"seltype":seltype},function (data) {
             var html="";
             console.log(data);
             console.log((data.length));
@@ -14,12 +14,16 @@ $(document).ready(function(){
              console.log(json);
             for(var i = 0 ; i<json.length;i++){
                 html+='<tr>';
-                html+="<td>"+json[i].id+"</td>"
-                    +"<td>"+json[i].name+"</td>"
-                    +"<td>"+json[i].date+"</td>"
-                    +"<td>"+json[i].type+"</td>"
-                    +"<td>"+json[i].text+"</td>";
-                html+='</tr>';
+                html+="<tr>\n" +
+                    "                                            <td>\n" +
+                    "                                                <p>"+json[i].type+"</p>\n" +
+                    "                                                <small>"+json[i].date+"</small>\n" +
+                    "                                            </td>\n" +
+                    "                                            <td><span class=\"h6\">"+json[i].name+"</span>\n" +
+                    "                                                <p>"+json[i].text+"</p>\n" +
+                    "                                            </td>\n" +
+                    "                                        </tr>"
+
             }
 
             $("#selectInfoTable").html(html);
