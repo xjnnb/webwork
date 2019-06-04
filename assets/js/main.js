@@ -51,19 +51,9 @@ $(document).ready(function(){
             }
             htmlBtn+=htmlBtnSuf;
             $('#pagination').html(htmlBtn);
-            $("body").find("a").click(function(e){             //阻止超链接默认事件
-                //如果提供了事件对象，则这是一个非IE浏览器
-                if ( e && e.preventDefault ) {
-                    //阻止默认浏览器动作(W3C)
-                    e.preventDefault();
-                }else{
-                    //IE中阻止函数器默认动作的方式
-                    window.event.returnValue = false;
-                    return false;
-                }
-            });
-             $("body").on("click",".jumpPage",function(){
 
+             $("body").on("click",".jumpPage",function(e){
+                 e.preventDefault();   //阻止默认事件
                  currentPage=$(this).parent().text();
                  console.log(currentPage);
                  $("#currentPage").html(currentPage);
