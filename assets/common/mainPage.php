@@ -47,7 +47,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-lg-4 col-md-5 col-sm-4 text-right">
-                                                <input type="text" placeholder="Search ..." class="form-control text-right" id="searchText">
+                                                <input type="text" placeholder="关键词.." class="form-control text-right" id="searchText">
                                             </div>
                                             <div class="col-lg-2 col-md-2 col-sm-4">
                                                 <button type="button"  class="btn btn-primary" id="searchBt">Go</button>
