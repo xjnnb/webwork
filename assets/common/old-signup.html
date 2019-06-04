@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>欢迎注册</title>
+    <link rel="stylesheet" href="../css/signup.css" type="text/css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+    <!-- Custom styles for this template -->
+
+    <link href="dashboard.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+
+    <link rel="stylesheet" href="../css/ready.css">
+    <link rel="stylesheet" href="../css/demo.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <h1 class="header">欢迎注册</h1>
+            <form class="section" action="" method="post">
+                <h5 class="describe" id="nameDes">&emsp; &emsp;<span class="describeHighlight">*</span>姓名</h5>
+                <input type="text" class="inputs" id="name" placeholder="Enter Your Real Name"
+                onblur="check_name();" onfocus="clear_nameError();">
+                <p class="results" id="nameResult"></p>
+                <p class="errors" id="nameError"></p>
+                
+                <h5 class="describe" id="IDdes">&emsp;<span class="describeHighlight">*</span>学工号</h5>
+                <input type="text" class="inputs" id="ID" placeholder="Enter Your Student/Teacher ID"
+                    onblur="check_ID();" onfocus="clear_IDError();">
+                <p class="results" id="IDResult"></p>
+                <p class="errors" id="IDError"></p>
+                <h5 class="describe" id="pwdDes">&emsp; &emsp;<span class="describeHighlight">*</span>密码</h5>
+                <input type="password" class="inputs" id="password" placeholder="Enter Your Password"
+                    onblur="check_pwd();" onfocus="clear_pwdError();">
+                <p class="results" id="pwdResult"></p>
+                <p class="errors" id="pwdError"></p>
+                <h5 class="describe" id="pwdCheckDes"><span class="describeHighlight">*</span>确认密码</h5>
+                <input type="password" class="inputs" id="pwdCheck" placeholder="Confirm Your Password"
+                    onblur="check_pwdAgain();" onfocus="clear_pwdAgainError();">
+                <p class="results" id="pwdCheckResult"></p>
+                <p class="errors" id="pwdCheckError"></p>
+                <h5 class="describe" id="verifyDes">&emsp;<span class="describeHighlight">*</span>验证码</h5>
+                <input type="text" class="inputs" id="verifyCode" placeholder="Enter the Verify Code"
+                    onblur="check_verifyCode();" onfocus="clear_verifyCodeError();" onkeypress="keyTrigger();">
+                <p class="results" id="verifyCodeResult"></p>
+                <img id="VerifyCodePhoto" src="" alt="">
+                <p id="changeVerifyCode"><a onclick=change_verifyCodePhoto()>看不清？换张图片</a></p>
+                <p class="errors" id="verifyCodeError"></p>
+                <p id="checkboxTxt"><input type="checkbox" id="checkbox" />同意<a>服务条款</a>及<a>隐私政策</a></p>
+                <input type="button" class="button" id="button" value="注册" onclick="submit_check();">
+            </form>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="../js/signup.js"></script>
+
+        <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+    </script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</html>
