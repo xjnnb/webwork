@@ -6,11 +6,11 @@
             </div>
             <div class="info">
                 <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-                                <span>
-                                    Hizrian
-                                    <span class="user-level">Administrator</span>
-                                    <span class="caret"></span>
-                                </span>
+                    <span>
+                        Hizrian
+                        <span class="user-level">Administrator</span>
+                        <span class="caret"></span>
+                    </span>
                 </a>
                 <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
                     <ul class="nav">
@@ -35,7 +35,7 @@
         </div>
         <ul class="nav nav-sidebar">
             <li><a href="../common/mainPage.php">人员信息管理</a></li>
-            <li><a href="">团队信息管理</a></li>
+            <li><a href="../common/teamPage.php">团队信息管理</a></li>
             <li><a href="../common/billboardPage.php">公告资讯管理</a></li>
         </ul>
     </ul>

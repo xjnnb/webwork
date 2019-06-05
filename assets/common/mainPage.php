@@ -34,10 +34,10 @@
                                             Add <code class="highlighter-rouge">.table-striped</code> to rows the striped table
                                         </div>
                                         <div class="form-group from-show-notify row">
-                                            <div class="col-lg-1 col-md-1 col-sm-4 text-right">
-                                                <label>State</label>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 text-right">
+                                                <label>筛选</label>
                                             </div>
-                                            <div class="col-lg-5 col-md-6 col-sm-4">
+                                            <div class="col-lg-2 col-md-3 col-sm-2">
                                                 <select class="form-control input-fixed" id="seltype">
                                                     <option value ="allSearch">全部</option>
                                                     <option value ="id">学工号</option>
@@ -46,10 +46,10 @@
                                                     <option value="dept">系别</option>
                                                 </select>
                                             </div>
-                                            <div class="col-lg-4 col-md-5 col-sm-4 text-right">
-                                                <input type="text" placeholder="关键词.." class="form-control text-right" id="searchText">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 text-right col-lg-offset-4">
+                                                <input type="text" placeholder="关键词 ... " class="form-control text-right" id="searchText">
                                             </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-4">
+                                            <div class="col-lg-1 col-md-1 col-sm-1">
                                                 <button type="button"  class="btn btn-primary" id="searchBt">Go</button>
                                             </div>
                                         </div>
