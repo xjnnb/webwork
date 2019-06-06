@@ -20,7 +20,7 @@
         <?php include "sidebar.php"; ?>
         <div class="main-panel">
             <div class="content">
-                <div class="container-fluid">
+                <div class="container-fluid" id="main1" style="display:block">
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <form action="" method="post">
@@ -83,6 +83,7 @@
 <script src="../js/sets/bootstrap.js"></script>
 <script src="../js/sets/ready.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
+<script src="../js/editPerson.js"></script>
 </body>
 
 </html>

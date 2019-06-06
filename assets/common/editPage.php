@@ -1,4 +1,4 @@
-<div class="container-fluid" id="main2" >
+<div class="container-fluid" id="main2"  style="display:none">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <form action="" method="post">
@@ -16,7 +16,7 @@
                                     <label>姓名:</label>
                                 </div>
                                 <div class="col-lg-6 col-md-9 col-sm-12">
-                                    <input type="text" class="form-control" id="id" placeholder="请输入姓名">
+                                    <input type="text" class="form-control" id="name" placeholder="请输入姓名" disabled="disabled">
                                 </div>
                             </div>
                             <div class="form-group from-show-notify row">
@@ -24,7 +24,7 @@
                                     <label>学号:</label>
                                 </div>
                                 <div class="col-lg-6 col-md-9 col-sm-12">
-                                    <input type="text" class="form-control" id="user_name" placeholder="请输入学号">
+                                    <input type="text" class="form-control" id="id" placeholder="请输入学号" disabled="disabled">
                                 </div>
                             </div>
                             <div class="form-group from-show-notify row">
@@ -34,11 +34,11 @@
                                     </div>
                                     <div class="col-lg-6 col-md-9 col-sm-12">
                                         <label class="form-radio-label">
-                                            <input class="form-radio-input" type="radio" name="optionsRadios" value="Male"  checked="" id="selectMale">
+                                            <input class="form-radio-input" type="radio" name="optionsRadios" value="Male"  checked="" id="selectMale" disabled="disabled">
                                             <span class="form-radio-sign">男</span>
                                         </label>
                                         <label class="form-radio-label">
-                                            <input class="form-radio-input" type="radio" name="optionsRadios" value="Female" id="selectFemale">
+                                            <input class="form-radio-input" type="radio" name="optionsRadios" value="Female" id="selectFemale" disabled="disabled">
                                             <span class="form-radio-sign">女</span>
                                         </label>
                                     </div>
@@ -46,18 +46,18 @@
                             </div>
                             <div class="form-group from-show-notify row">
                                 <div class="col-lg-4 col-md-3 col-sm-12 text-right">
-                                    <label>团队编号:</label>
+                                    <label>团队:</label>
                                 </div>
                                 <div class="col-lg-6 col-md-9 col-sm-12">
-                                    <input type="password" class="form-control" id="password" placeholder="请输入团队编号" disabled="disabled">
+                                    <input type="password" class="form-control" id="team" placeholder="请输入团队" disabled="disabled">
                                 </div>
                             </div>
                             <div class="form-group from-show-notify row">
                                 <div class="col-lg-4 col-md-3 col-sm-12 text-right">
-                                    <label>年级:</label>
+                                    <label>身份:</label>
                                 </div>
                                 <div class="col-lg-6 col-md-9 col-sm-12">
-                                    <input type="text" class="form-control" id="real_name" placeholder="请输入年级">
+                                    <input type="text" class="form-control" id="statue" placeholder="请输入身份" disabled="disabled">
                                 </div>
                             </div>
                             <div class="form-group from-show-notify row">
@@ -65,7 +65,7 @@
                                     <label>专业:</label>
                                 </div>
                                 <div class="col-lg-6 col-md-9 col-sm-12">
-                                    <input type="text" class="form-control" id="mobile" placeholder="请输入专业">
+                                    <input type="text" class="form-control" id="dept" placeholder="请输入专业" disabled="disabled">
                                 </div>
                             </div>
                             <div class="form-group from-show-notify row">
@@ -73,7 +73,7 @@
                                     <label>自我介绍:</label>
                                 </div>
                                 <div class="col-lg-6 col-md-9 col-sm-12">
-                                    <input type="text" class="form-control" id="business" placeholder="请输入自我介绍">
+                                        <textarea class="form-control" id="introduce">请输入自我介绍</textarea>
                                 </div>
                             </div>
                             <hr>
@@ -82,7 +82,7 @@
                                     <label>修改密码:</label>
                                 </div>
                                 <div class="col-lg-6 col-md-9 col-sm-12">
-                                    <input type="password" class="form-control" id="card_no" placeholder="请输入修改的密码">
+                                    <input type="password" class="form-control" id="password" placeholder="请输入修改的密码">
                                 </div>
                             </div>
                             <div class="form-group from-show-notify row">
@@ -90,7 +90,7 @@
                                     <label>确认密码:</label>
                                 </div>
                                 <div class="col-lg-6 col-md-9 col-sm-12">
-                                    <input type="password" class="form-control" id="address" placeholder="请再次输入修改的密码">
+                                    <input type="password" class="form-control" id="passwordAgain" placeholder="请再次输入修改的密码">
                                 </div>
                             </div>
 
@@ -104,7 +104,7 @@
                                     <div></div>
                                 </div>
                                 <div class="col-lg-7 col-md-7 col-sm-12" >
-                                    <button id="displayNotif" type="button" class="btn btn-success">保存修改</button>
+                                    <button id="displayNotif" type="button" class="btn btn-success" >保存修改</button>
                                 </div>
                             </div>
                         </div>

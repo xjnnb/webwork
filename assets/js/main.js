@@ -26,10 +26,10 @@ $(document).ready(function(){
                     +"<td>"+json[i].state+"</td>";
                 html+='<td>\n' +
                     '                                                        <div class="form-button-action">\n' +
-                    '                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link <btn-simple-primary" data-original-title="Edit Task" id="editBtn">\n' +
+                    '                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link <btn-simple-primary editBtn" data-original-title="Edit Task" id="editBtn">\n' +
                     '                                                            <i class="la la-edit"></i>\n' +
                     '                                                        </button>\n' +
-                    '                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-simple-danger" data-original-title="Remove" id="deleteBtn">\n' +
+                    '                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-simple-danger deleteBtn" data-original-title="Remove" id="deleteBtn">\n' +
                     '                                                            <i class="la la-times"></i>\n' +
                     '                                                        </button>\n' +
                     '                                                        </div>\n' +
