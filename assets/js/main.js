@@ -132,7 +132,6 @@ $(document).ready(function(){
             var htmlBtn=htmlBtnPre;
             for(var i=1;i<=totalPage;i++){
                 htmlBtn+="<li><a href='#' class ='jumpPage'>"+i+"</a></li>";
-
             }
             htmlBtn+=htmlBtnSuf;
             $('#pagination').html(htmlBtn);

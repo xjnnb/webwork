@@ -1,9 +1,3 @@
-/*
-Author:Wengdf
-BuildDate:2019-05-24
-Version:1.0
-Function:signup
-*/
 var arrErrorInfos = [ //输入报错提示文本
     "姓名为空",
     "姓名长度应小于18个字符",
@@ -27,11 +21,11 @@ var submitInfos = [ //提交提示文本
     "注册项有误",
     "注册提交"
 ];
-var checkStatus; //定义检查状态变量
+var nameCorrect,IDCorrect,pwdCorrect,pwdCheckCorrect; //定义检查状态变量
 
 
 //检测姓名
-$('#name').blur(function(event) {
+$('#name').blur(function () {
     $('#nameError').css('color', 'red');
     if ($(this).val().length <= 0) {
         $(this).parent().removeClass("has-success");
@@ -50,17 +44,19 @@ $('#name').blur(function(event) {
         $(this).parent().addClass("has-success");
         $('#nameError').css('color', '#59d05d');
         $('#nameError').html(arrCorrectInfos[0]);
+        nameCorrect=true;
     }
 });
 //去除提示
-$('#name').focus(function () {
+$('#name').focus(function(){
     $(this).val('');
     $('#nameError').html('&emsp;');
 });
 
 
 //检查学工号
-$('#ID').blur(function(event) {
+$('#ID').blur(function (){
+    var IDNum_input=$(this).val();
     $('#IDError').css('color', 'red');
     if ($(this).val().length !== 9) {
         $(this).parent().removeClass("has-success");
@@ -68,7 +64,7 @@ $('#ID').blur(function(event) {
         $('#IDError').html(arrErrorInfos[8]);
         checkStatus = true;
     }
-    else if ($(this).val().length > 18) {
+    else if (IDNum_input[0] !== "T" && IDNum_input[0] !== "S") {
         $(this).parent().removeClass("has-success");
         $(this).parent().addClass("has-error");
         $('#IDError').html(arrErrorInfos[5]);
@@ -79,172 +75,122 @@ $('#ID').blur(function(event) {
         $(this).parent().addClass("has-success");
         $('#IDError').css('color', '#59d05d');
         $('#IDError').html(arrCorrectInfos[3]);
+        IDCorrect=true;
     }
 });
 //去除提示
-$('#name').focus(function () {
+$('#ID').focus(function(){
     $(this).val('');
-    $('#nameError').html('&emsp;');
+    $('#IDErrorObj').html('&emsp;');
 });
-//检查学工号是否合法
-    function check_ID() {
-        var IDObj = document.getElementById("ID");
-        var IDNum_input = IDObj.value;
-        IDErrorObj.style.color = "red";
-        if (IDNum_input.length !== 9) { //检查学工号长度
-            removeClass(IDObj.parentNode, "has-success");
-            addClass(IDObj.parentNode, "has-error");
-            IDErrorObj.innerHTML = arrErrorInfos[8];
-            checkStatus = true;
-        } else if (IDNum_input[0] !== "T" && IDNum_input[0] !== "S") { //检查学工号第一位
-            removeClass(IDObj.parentNode, "has-success");
-            addClass(IDObj.parentNode, "has-error");
-            IDErrorObj.innerHTML = arrErrorInfos[5];
-            checkStatus = true;
-        } else { //学工号合法
-            removeClass(IDObj.parentNode, "has-error");
-            addClass(IDObj.parentNode, "has-success");
-            IDErrorObj.style.color = "#59d05d";
-            IDErrorObj.innerHTML = arrCorrectInfos[3];
+
+//检查密码
+$('#passwords').blur(function () {
+    var onlyNum = /^[0-9]+$/g; //密码只含数字
+    var onlyEn = /^[a-zA-Z]+$/g; //密码只含英文字母
+    $('#pwdError').css('color', 'red');
+    if ($(this).val().length< 6 || $(this).val().length > 16) {
+        $(this).parent().removeClass("has-success");
+        $(this).parent().addClass("has-error");
+        $('#pwdError').html(arrErrorInfos[2]);
+        checkStatus = true;
+    }
+    else if (onlyNum.test($(this).val())|| onlyEn.test($(this).val())) {
+        $(this).parent().removeClass("has-success");
+        $(this).parent().addClass("has-error");
+        $('#pwdError').html(arrErrorInfos[3]);
+        checkStatus = true;
+    }
+    else { //name输入合法
+        $(this).parent().removeClass("has-error");
+        $(this).parent().addClass("has-success");
+        $('#pwdError').css('color', '#59d05d');
+        $('#pwdError').html(arrCorrectInfos[1]);
+        pwdCorrect=true;
+    }
+});
+//去除提示
+$('#passwords').focus(function () {
+    $(this).val('');
+    $('#pwdError').html('&emsp;');
+});
+
+//检查确认密码
+$('#pwdCheck').blur(function () {
+    $('#pwdCheckError').css('color', 'red');
+    if ($(this).val().length===0) {//确认密码为空
+        $(this).parent().removeClass("has-success");
+        $(this).parent().addClass("has-error");
+        $('#pwdCheckError').html(arrErrorInfos[7]);
+        checkStatus = true;
+    }
+    else if ($(this).val()!==$('#passwords').val()) {//两次输入密码不同
+        $(this).parent().removeClass("has-success");
+        $(this).parent().addClass("has-error");
+        $('#pwdCheckError').html(arrErrorInfos[4]);
+        checkStatus = true;
+    }
+    else { //两次输入密码相同
+        $(this).parent().removeClass("has-error");
+        $(this).parent().addClass("has-success");
+        $('#pwdCheckError').css('color', '#59d05d');
+        $('#pwdCheckError').html(arrCorrectInfos[2]);
+        pwdCheckCorrect=true;
+    }
+});
+//去除提示
+$('#pwdCheck').focus(function () {
+    $(this).val('');
+    $('#pwdCheckError').html('&emsp;');
+});
+
+
+
+//对键盘输入作出响应
+$(document).keydown(function(event){
+    if (event.keyCode == 13) { //单击回车触发
+        submit_check(); //调用登陆方法
+    }
+});
+
+//按顺序检查所有输入项
+function check_all_status_in_order() {
+    $('#name').blur();
+    $('#ID').blur();
+    $('#passwords').blur();
+    $('#pwdCheck').blur();
+}
+
+//提交检查
+$("#okBtn").click(function(){
+    nameCorrect= false, IDCorrect= false,pwdCorrect= false,pwdCheckCorrect= false;//初始化
+    check_all_status_in_order(); //校验全部
+
+    if (!($('#agreeItems').is(':checked'))) { //检查checkBox是否被选中
+        alert(submitInfos[0]);
+    }
+    else if (nameCorrect && IDCorrect && pwdCorrect && pwdCheckCorrect){
+        alert(submitInfos[1]);
+    }
+    else {
+        var confirm = window.confirm(submitInfos[2]); //弹出确认框
+        if (confirm) { //判断是否确认
+            //window.location.href = "../../index.html"; //跳转登陆界面
         }
     }
-
-//清除IDError
-    function clear_IDError() {
-        var IDObj = document.getElementById("ID");
-        IDObj.value = "";
-        IDErrorObj.innerHTML = "&emsp;";
-    }
-//
-//
-// //检查密码是否合法
-//     function check_pwd() {
-//         var onlyNum = /^[0-9]+$/g; //密码只含数字
-//         var onlyEn = /^[a-zA-Z]+$/g; //密码只含英文字母
-//         var pwdObj = document.getElementById("password");
-//         var pwd_input = pwdObj.value;
-//         var pwdLen = pwd_input.length; //获取密码长度
-//         pwdErrorObj.style.color = "red";
-//         if (pwdLen < 6 || pwdLen > 16) { //检查密码长度是否在6～16范围内
-//             removeClass(pwdObj.parentNode, "has-success");
-//             addClass(pwdObj.parentNode, "has-error");
-//             pwdErrorObj.innerHTML = arrErrorInfos[2];
-//             checkStatus = true;
-//         } else if (onlyNum.test(pwd_input) || onlyEn.test(pwd_input)) { //检查密码是否只含数字或只含英文字母
-//             removeClass(pwdObj.parentNode, "has-success");
-//             addClass(pwdObj.parentNode, "has-error");
-//             pwdErrorObj.innerHTML = arrErrorInfos[3];
-//             checkStatus = true;
-//         } else { //密码合法
-//             removeClass(pwdObj.parentNode, "has-error");
-//             addClass(pwdObj.parentNode, "has-success");
-//             pwdErrorObj.style.color = "#59d05d";
-//             pwdErrorObj.innerHTML = arrCorrectInfos[1];
+});
+// function submit_check() {
+//     nameCorrect= false, IDCorrect= false,pwdCorrect= false,pwdCheckCorrect= false;//初始化
+//     check_all_status_in_order(); //按顺序检查所以输入是否正确
+//     var checkBoxObj = document.getElementById("agreeItems");
+//     if (!checkBoxObj.checked) { //检查checkBox是否被选中,并在报错后变更验证码
+//         alert(submitInfos[0]);
+//     } else if (checkStatus) { //检查所有输入项是否合法,并在报错后变更验证码
+//         alert(submitInfos[1]);
+//     } else {
+//         var confirm = window.confirm(submitInfos[2]); //弹出确认框
+//         if (confirm) { //判断是否确认
+//             //window.location.href = "../../index.html"; //跳转登陆界面
 //         }
 //     }
-//
-// //清除pwdError
-//     function clear_pwdError() {
-//         var pwd = document.getElementById("password");
-//         pwd.value = "";
-//         pwdErrorObj.innerHTML = "&emsp;";
-//     }
-//
-//
-// //检查两次密码是否相同
-//     function check_pwdAgain() {
-//         var pwd1Obj = document.getElementById("password");
-//         var pwd2Obj = document.getElementById("pwdCheck")
-//         var pwd_input1 = pwd1Obj.value; //第一次输入的密码
-//         var pwd_input2 = pwd2Obj.value; //第二次输入的密码
-//         pwdCheckErrorObj.style.color = "red";
-//         if (pwd_input2.length === 0) { //第二次输入密码为空
-//             removeClass(pwd2Obj.parentNode, "has-success");
-//             addClass(pwd2Obj.parentNode, "has-error");
-//             pwdCheckErrorObj.innerHTML = arrErrorInfos[7];
-//             checkStatus = true;
-//         } else if (pwd_input1 !== pwd_input2) { //两次输入密码不同
-//             removeClass(pwd2Obj.parentNode, "has-success");
-//             addClass(pwd2Obj.parentNode, "has-error");
-//             pwdCheckErrorObj.innerHTML = arrErrorInfos[4];
-//             checkStatus = true;
-//         } else { //两次输入密码相同
-//             removeClass(pwd2Obj.parentNode, "has-error");
-//             addClass(pwd2Obj.parentNode, "has-success");
-//             pwdCheckErrorObj.style.color = "#59d05d";
-//             pwdCheckErrorObj.innerHTML = arrCorrectInfos[2];
-//         }
-//     }
-//
-// //清除pwdAgainError并清空输入框
-//     function clear_pwdAgainError() {
-//         var pwdCheck = document.getElementById("pwdCheck");
-//         pwdCheck.value = ""; //清空输入框
-//         pwdCheckErrorObj.innerHTML = "&emsp;";
-//     }
-//
-//
-// //对键盘输入作出响应
-//     function keyTrigger() {
-//         if (event.keyCode == 13) { //单击回车（13）触发
-//             submit_check(); //调用登陆方法
-//         }
-//     }
-//
-// //按顺序检查所有输入项
-//     function check_all_status_in_order() {
-//         check_ID();
-//         check_name();
-//         check_pwd();
-//         check_pwdAgain();
-//     }
-//
-// //提交检查
-//     function submit_check() {
-//         checkStatus = false; //初始化检查状态
-//         check_all_status_in_order(); //按顺序检查所以输入是否正确
-//         var checkBoxObj = document.getElementById("agreeItems");
-//         if (!checkBoxObj.checked) { //检查checkBox是否被选中,并在报错后变更验证码
-//             alert(submitInfos[0]);
-//         } else if (checkStatus) { //检查所有输入项是否合法,并在报错后变更验证码
-//             alert(submitInfos[1]);
-//         } else {
-//             var confirm = window.confirm(submitInfos[2]); //弹出确认框
-//             if (confirm) { //判断是否确认
-//                 window.location.href = "../../index.html"; //跳转登陆界面
-//             }
-//         }
-//     }
-//
-// $(document).ready(function() {//文档就绪事件
-//
-//     //用户名
-//
-//
-//
-//
-//     //密码
-//
-//     //检测密码
-//     $('#userPw').blur(function(event)  { //失去焦点时进行判断密码
-//         if ($('#userPw').val().length != 6) { //内容长度非6
-//             $('#pwError').css('color', 'red');
-//             $('#pwError').html("密码需为六位");
-//             $('#pwError').css('visibility', 'visible');
-//         } else {
-//             $('#pwError').css('visibility', 'hidden');
-//         }
-//     });
-//     //去除提示
-//     $('#userPw').focus(function () {
-//         $('#logInfo').css('visibility', 'hidden');
-//     });
-//
-//
-//
-//     //登陆
-//
-//     $('#registBut').click(function(){
-//         window.location.href = "register/register.html";
-//     });
-//});
+// }
