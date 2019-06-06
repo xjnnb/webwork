@@ -72,6 +72,7 @@
                     </div>
                     <?php include "pagination.php"; ?>
                 </div>
+                <?php include "editPage.php"; ?>
             </div>
             <?php include "footer.php"; ?>
         </div>
