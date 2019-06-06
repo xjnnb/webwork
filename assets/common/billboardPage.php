@@ -6,11 +6,8 @@
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../../favicon.ico">
     <title>实验室信息管理系统</title>
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link href="../css/sets/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/sets/ready.css">
     <link rel="stylesheet" href="../css/sets/demo.css">
     <link rel="stylesheet" href="../css/main.css" type="text/css">
@@ -93,10 +90,9 @@
         </div>
     </div>
 </div>
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
 <script src="../js/sets/jquery.3.2.1.min.js"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../js/sets/bootstrap.js"></script>
 <script src="../js/sets/ready.min.js"></script>
 <script type="text/javascript" src="../js/billboard.js"></script>
 </body>
