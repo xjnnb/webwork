@@ -26,9 +26,10 @@
                             <form action="" method="post">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="card-sub">
-                                            Add <code class="highlighter-rouge">.table-striped</code> to rows the striped table
-                                        </div>
+                                            <ul class="breadcrumb">
+                                                <li><a href="../common/mainPage.php">首页</a></li>
+                                                <li class="active">搜索</li>
+                                            </ul>
                                         <div class="form-group from-show-notify row">
                                             <div class="col-lg-1 col-md-1 col-sm-1 text-right">
                                                 <label>筛选</label>

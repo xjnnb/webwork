@@ -25,9 +25,10 @@
                         <div class="col-md-10 col-md-offset-1">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="card-sub">
-                                        Add <code class="highlighter-rouge">.table-striped</code> to rows the striped table
-                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li><a href="../common/mainPage.php">首页</a></li>
+                                        <li class="active">公告管理</li>
+                                    </ul>
                                     <div class="form-group from-show-notify row">
                                         <div class="col-lg-1 col-md-1 col-sm-1 text-right">
                                             <label>日期</label>
@@ -61,20 +62,20 @@
                                         <tbody id="selectInfoTable">
                                         <tr>
                                             <td>
-                                                <p>动词打次类</p>
-                                                <small>2019-01-01</small>
+                                                <p><br></p>
+                                                <small><br></small>
                                             </td>
-                                            <td><span class="h6">我是标题，很长的那种，很厉害的那种</span>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                            <td><span class="h6"><br></span>
+                                                <p><br><br><br><br></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <p>Paragraph</p>
-                                                <small>2019-01-01</small>
+                                                <p><br></p>
+                                                <small><br></small>
                                             </td>
-                                            <td><span class="h6">h6. Bootstrap heading</span>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                            <td><span class="h6"><br></span>
+                                                <p><br><br><br><br></p>
                                             </td>
                                         </tr>
                                         </tbody>

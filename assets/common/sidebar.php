@@ -7,36 +7,31 @@
             <div class="info">
                 <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                     <span>
-                        <span id="userNameInfo"></span>
-                        <span class="user-level" id="userLevelInfo"></span>
+                        <span id="userNameInfo"><br></span>
+                        <span class="user-level" id="userLevelInfo"><br></span>
                         <span class="caret"></span>
                     </span>
                 </a>
                 <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
                     <ul class="nav">
                         <li>
-                            <a href="#">
-                                <span class="link-collapse">My Profile</span>
+                            <a href="../common/mainPage.php">
+                                <span class="link-collapse">人员信息管理</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <span class="link-collapse">Edit Profile</span>
+                            <a href="../common/teamPage.php">
+                                <span class="link-collapse">团队信息管理</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <span class="link-collapse">Settings</span>
+                            <a href="../common/billboardPage.php">
+                                <span class="link-collapse">公告资讯管理</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <ul class="nav nav-sidebar">
-            <li><a href="../common/mainPage.php">人员信息管理</a></li>
-            <li><a href="../common/teamPage.php">团队信息管理</a></li>
-            <li><a href="../common/billboardPage.php">公告资讯管理</a></li>
-        </ul>
     </ul>
 </div>
