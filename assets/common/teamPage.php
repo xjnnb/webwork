@@ -56,14 +56,12 @@
                                                                 <h4 class="card-title">三只菜鸡</h4>
                                                                 <p class="card-text"><small>虽然我们代码菜，但是我们界面好看啊！</small></p>
                                                                 <p class="card-text text-right">
-                                                                   <div class="form-button-action">
-                                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link <btn-simple-primary" data-original-title="Edit Task" id="editBtn">
-                                                                              <i class="la la-edit"></i>
-                                                                            </button>
-                                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-simple-danger" data-original-title="Remove" id="deleteBtn">
-                                                                                <i class="la la-times"></i>
-                                                                            </button>
-                                                                    </div>
+                                                                    <button type="button" data-toggle="tooltip" title="" class="btn-link <btn-simple-primary" data-original-title="Edit Task" id="editBtn">
+                                                                        <i class="la la-edit"></i>
+                                                                    </button>
+                                                                    <button type="button" data-toggle="tooltip" title="" class="btn-link btn-simple-danger" data-original-title="Remove" id="deleteBtn">
+                                                                        <i class="la la-times"></i>
+                                                                    </button>
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -76,9 +74,12 @@
                                                                 <h4 class="card-title">三只菜鸡</h4>
                                                                 <p class="card-text"><small>虽然我们代码菜，但是我们界面好看啊！</small></p>
                                                                 <p class="card-text text-right">
-                                                                    <img style="border-radius: 90px; width: 10%" src="../img/profile.jpg">
-                                                                    <img style="border-radius: 90px; width: 10%" src="../img/profile.jpg">
-                                                                    <img style="border-radius: 90px; width: 10%" src="../img/profile.jpg">
+                                                                    <button type="button" data-toggle="tooltip" title="" class="btn-link <btn-simple-primary" data-original-title="Edit Task" id="editBtn">
+                                                                        <i class="la la-edit"></i>
+                                                                    </button>
+                                                                    <button type="button" data-toggle="tooltip" title="" class="btn-link btn-simple-danger" data-original-title="Remove" id="deleteBtn">
+                                                                        <i class="la la-times"></i>
+                                                                    </button>
                                                                 </p>
                                                             </div>
                                                         </div>
