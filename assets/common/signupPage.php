@@ -79,7 +79,6 @@
 </div>
 <script src="../js/sets/jquery.3.2.1.min.js"></script>
 <script src="../js/sets/bootstrap.min.js"></script>
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
 <script type="text/javascript" charset="utf-8" src="../js/signup.js"></script>
 <script type="text/javascript" src="../js/signupAjax.js"></script>
 </body>
