@@ -7,8 +7,8 @@
             <div class="info">
                 <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                     <span>
-                        Hizrian
-                        <span class="user-level">Administrator</span>
+                        <span id="userNameInfo"></span>
+                        <span class="user-level" id="userLevelInfo"></span>
                         <span class="caret"></span>
                     </span>
                 </a>
