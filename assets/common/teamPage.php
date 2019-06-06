@@ -36,19 +36,6 @@
                                             Add <code class="highlighter-rouge">.table-striped</code> to rows the striped table
                                         </div>
                                         <div class="form-group from-show-notify row">
-                                            <div class="col-lg-1 col-md-1 col-sm-1 text-right">
-                                                <label>系别</label>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3 col-sm-2">
-                                                <select class="form-control" id="seltype">
-                                                    <option value ="allSearch">全部</option>
-                                                    <option value = "软件工程">软件工程</option>
-                                                    <option value = "计算机科学与技术">计算机科学与技术</option>
-                                                    <option value = "计算机科学与技术(师范)">计算机科学与技术(师范)</option>
-                                                    <option value = "计算机金融">计算机金融</option>
-                                                    <option value = "物联网">物联网</option>
-                                                </select>
-                                            </div>
                                             <div class="col-lg-4 col-md-4 col-sm-4 text-right col-lg-offset-4">
                                                 <input type="text" placeholder="关键词 ... " class="form-control text-right" id="searchText">
                                             </div>
@@ -72,13 +59,19 @@
                                                                 <h4 class="card-title">三只菜鸡</h4>
                                                                 <p class="card-text"><small>虽然我们代码菜，但是我们界面好看啊！</small></p>
                                                                 <p class="card-text text-right">
-                                                                    <img style="border-radius: 90px; width: 10%" src="../img/profile.jpg">
-                                                                    <img style="border-radius: 90px; width: 10%" src="../img/profile.jpg">
-                                                                    <img style="border-radius: 90px; width: 10%" src="../img/profile.jpg">
+                                                                   <div class="form-button-action">
+                                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link <btn-simple-primary" data-original-title="Edit Task" id="editBtn">
+                                                                              <i class="la la-edit"></i>
+                                                                            </button>
+                                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-simple-danger" data-original-title="Remove" id="deleteBtn">
+                                                                                <i class="la la-times"></i>
+                                                                            </button>
+                                                                    </div>
                                                                 </p>
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="col-sm-3 col-md-3 col-lg-3">
                                                         <div class="card sm-card">
                                                             <img class="card-img-top" src="http://cn.inspinia.cn/html/inspiniacn/quillpro/assets/img/gallery-image-3.jpg" alt="Gallery Image 3">
@@ -114,6 +107,7 @@
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="../js/sets/ready.min.js"></script>
+<script src="../js/team.js"></script>
 <script type="text/javascript" src="../js/metchHeight.js"></script>
 </body>
 
