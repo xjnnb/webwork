@@ -36,12 +36,13 @@ $(document).ready(function() {
             if (power == "Student") {
                 alert("对不起，您没有此权限！");
             } else {
-                var id = $(this).parent().parent().siblings().eq(2).text();
-
-                $.post("../common/editPerson.php", {"id": id, "flag": 1}, function (data) {
-                    alert("删除成功！");
-                    window.location.href = "mainPage.php";
-                })
+                if(confirm("确定执行删除操作?")){
+                    var id = $(this).parent().parent().siblings().eq(2).text();
+                    $.post("../common/editPerson.php", {"id": id, "flag": 1}, function (data) {
+                        alert("删除成功！");
+                        window.location.href = "mainPage.php";
+                    })
+                }
             }
         });
 
