@@ -46,7 +46,7 @@ for($i=0;$i<count($arr);$i++){
         $brr[$i]["student"]=$row[0];
     }
 
-    $sql="SELECT text from introduce where introduce_id=".$arr[$i][4];
+    $sql="SELECT text from introduce where introduce_id='".$arr[$i][4]."'";
     $rs=mysqli_query($db,$sql);
     $brr[$i]["introduce"]="";
     while($row=mysqli_fetch_array($rs)){
