@@ -163,10 +163,7 @@ function check_all_status_in_order() {
 $("#okBtn").click(function(){
     nameCorrect= false, IDCorrect= false,pwdCorrect= false,pwdCheckCorrect= false;//初始化
     check_all_status_in_order(); //校验全部
-    if (!($("input[name='agreeItems]").is(':checked'))) { //检查checkBox是否被选中
-        alert(submitInfos[0]);
-    }
-    else if (!nameCorrect || !IDCorrect ||! pwdCorrect ||! pwdCheckCorrect){
+    if (!nameCorrect || !IDCorrect ||! pwdCorrect ||! pwdCheckCorrect){
         alert(submitInfos[1]);
     }
     else {
@@ -189,4 +186,7 @@ $("#okBtn").click(function(){
             });
         }
     }
+});
+$("#backBtn").click(function(){
+    window.location="../../index.html";
 });

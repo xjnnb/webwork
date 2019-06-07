@@ -143,7 +143,6 @@ $(document).ready(function(){
                  $("#currentPage").html(currentPage);
 
                  showInfo();
-
              });
 
             if(totalPage==0){
