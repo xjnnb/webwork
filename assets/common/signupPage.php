@@ -35,7 +35,7 @@
                         <span class="form-radio-sign">Female</span>
                     </label>
                 </div>
-                <div class="form-group" id="div1">
+                <div class="form-group">
                     <label id="successInput">学工号</label>
                     <input type="text" class="form-control" id="ID" placeholder="Enter Your Student/Teacher ID">
                     <small id="idHelp" class="form-text text-muted">学生学号以S开头，教师工号以T开头，9位长度</small>
@@ -53,13 +53,13 @@
                 </div>
                 <div class="form-group">
                     <label for="password">密码</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter Your Password" onblur="check_pwd();" onfocus="clear_pwdError();">
+                    <input type="password" class="form-control" id="passwords" placeholder="Enter Your Password">
                     <small id="passwordHelp" class="form-text text-muted">请输入密码，密码长度应为 6~16 个字符字母加数字组合</small>
                     <small class="errors" id="pwdError">&emsp;</small>
                 </div>
                 <div class="form-group">
                     <label for="password">确认密码</label>
-                    <input type="password" class="form-control" id="pwdCheck" placeholder="Confirm Your Password" onblur="check_pwdAgain();" onfocus="clear_pwdAgainError();">
+                    <input type="password" class="form-control" id="pwdCheck" placeholder="Confirm Your Password">
                     <small id="checkPasswordHelp" class="form-text text-muted">请再次填写密码</small>
                     <small class="errors" id="pwdCheckError">&emsp;</small>
                 </div>
@@ -70,7 +70,7 @@
                     </label>
                 </div>
                 <div class="card-action">
-                    <button type="button"  class="btn btn-success" id="okBtn">确认注册</button>
+                    <button type="button"  class="btn btn-success" id="okBtn" onclick="submit_check();">确认注册</button>
                     <button type="button"  class="btn btn-danger" id="backBtn">返回登陆</button>
                 </div>
             </form>

@@ -58,6 +58,11 @@
                                             <button type="button"  class="btn btn-primary" id="searchBt">Go</button>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="compose-message">
+                                            <a href="../common/addNoticePage.php" class="btn btn-default btn-gradient btn-block up-notice" role="button">发布公告</a>
+                                        </div>
+                                    </div>
                                     <table class="table table-typo">
                                         <tbody id="selectInfoTable">
                                         <tr>

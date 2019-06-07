@@ -33,7 +33,7 @@
                                                 <li class="active">团队管理</li>
                                             </ul>
                                         <div class="form-group from-show-notify row">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 text-right col-lg-offset-4">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 text-right col-lg-offset-7">
                                                 <input type="text" placeholder="关键词 ... " class="form-control text-right" id="searchText">
                                             </div>
                                             <div class="col-lg-1 col-md-1 col-sm-1">
@@ -74,6 +74,7 @@
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="../js/sets/bootstrap.js"></script>
 <script src="../js/sets/ready.min.js"></script>
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="https://files.cnblogs.com/files/lfri/canvas-nest.js"></script>
 <script src="../js/team.js"></script>
 <script src="../js/teamPage.js"></script>
 <script type="text/javascript" src="../js/metchHeight.js"></script>
