@@ -63,4 +63,4 @@
 echo $flag;
 //    echo json_encode($data);//输出json数据
 
-    ?>
+?>
