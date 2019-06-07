@@ -126,19 +126,17 @@ $(document).ready(function () {
                         "                                                    </div>";
                 }
                 $("#selectInfoTable").html(html);
+                //metchHeight
+                var $divClass = $('.sm-card');
+                var height = 0;
+                $divClass.each(function () {
+                    if ($(this).height() > height) {
+                        height = $(this).height();
+                    }
+                });
+                $divClass.height(height);
+                $('.icon-preview').css('marginTop',height/3);
             }
-
-            //metchHeight
-            var $divClass = $('.sm-card');
-            var height = 0;
-            $divClass.each(function () {
-                if ($(this).height() > height) {
-                    height = $(this).height();
-                }
-            });
-            $divClass.height(height);
-            $('.icon-preview').css('marginTop',height/3);
-
 
             //pagination
             var json = JSON.parse(data);
@@ -182,6 +180,8 @@ $(document).ready(function () {
             })
         })
     })
+
+
     $("body").on("click", ".addTeam", function () {
 
         $("#main1").hide();
