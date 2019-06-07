@@ -79,7 +79,7 @@ if($flag==0){
         $text=$row[0];
     }
     echo $text;
-}else{
+}else if($flag==4){
     $sql="select * from plan where team_id='".$team_id."'";
     $rs=mysqli_query($db,$sql);
     $arr=array();
@@ -87,6 +87,15 @@ if($flag==0){
         $arr[]=array("name"=>$row[1],"date"=>$row[2],"type"=>$row[3],"text"=>$row[4]);
     }
     echo json_encode($arr);
+}else{
+    $sql="delete from team where team_id='".$team_id."'";
+    mysqli_query($db,$sql);
+
+    $sql="update stu set  team_id='0' where team_id='".$team_id."'";
+    mysqli_query($db,$sql);
+
+    $sql="update teacher set  team_id='0' where team_id='".$team_id."'";
+    mysqli_query($db,$sql);
 }
 
 ?>

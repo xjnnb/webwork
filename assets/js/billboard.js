@@ -60,4 +60,22 @@ $(document).ready(function(){
             $("#selectInfoTable").html(html);
         });
     });
+    $("#addNotice").click(function (e) {
+        e.preventDefault();
+        $("#main1").hide();
+        $("#main2").show();
+    })
+    $("#displayNotif").click(function () {
+        var name=$("#name").val();
+        var seltype=$("#seltype").val();
+        var text=$("#comment").val();
+        $.post("../common/addNotice.php",{"name":name,"seltype":seltype,"text":text},function (data) {
+            if(data==1){
+                alert("公告添加成功！");
+                window.location.href="../common/billboardPage.php"
+            }else{
+                alert("标题和内容均不能为空！");
+            }
+        })
+    })
 });

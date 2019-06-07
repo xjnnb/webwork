@@ -1,4 +1,14 @@
 $(document).ready(function () {
+    $("body").on("click", "#deleteBtn", function () {
+            var team_name = $(this).parent().siblings().eq(0).text();
+
+            $.post("../common/editTeam.php",{"name":team_name,"flag":5},function (data) {
+                alert("删除团队成功！");
+                window.location.href="../common/teamPage.php";
+            })
+
+        }
+    )
     $("body").on("click", "#editBtn", function () {
 
         var team_name = $(this).parent().siblings().eq(0).text();

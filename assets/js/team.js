@@ -13,7 +13,7 @@ $(document).ready(function () {
             var html="";
             html+="<div class=\"col-sm-3 col-md-3 col-lg-3\">\n" +
                 "                                                        <div class=\"card sm-card\" style=\"background-color: #f2f3f8;border-radius: 10px;\">\n" +
-                "                                                            <div class=\"icon-preview\" style=\"font-size: inherit;font-size: 6rem; text-align: center;\"><i class=\"la la-plus\"></i></div>\n" +
+                "                                                            <div class=\"icon-preview addTeam\" style=\"font-size: inherit;font-size: 6rem;  text-align: center;\"><i class=\"la la-plus\"></i></div>\n" +
                 "                                                        </div>\n" +
                 "                                                    </div>";
             for(var i=0;i<json.length;i++){
@@ -39,6 +39,27 @@ $(document).ready(function () {
             }
             $("#selectInfoTable").html(html);
 
+        })
+    })
+    $("body").on("click", ".addTeam", function () {
+
+        $("#main1").hide();
+        $("#main3").show();
+
+    })
+
+    $("#saveNewTeam1").click(function () {
+        var name =$("#name").val();
+        var teacher=$("#teacher").val();
+        var stu=$("#stu").val();
+        var comment=$("#comment").val();
+        $.post("../common/addNewTeam.php",{'name':name,'teacher':teacher,'stu':stu,'comment':comment},function (data) {
+            if(data==1){
+                alert("添加团队成功！");
+                window.location.href='../common/teamPage.php';
+            }else{
+                alert("信息为空或者成员已经被添加！");
+            }
         })
     })
 })
