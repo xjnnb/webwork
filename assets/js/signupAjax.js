@@ -10,8 +10,8 @@ $(document).ready(function(){
             var json = JSON.parse(data);
             //console.log(json[0].result);
             if(json[0].result== '0'){
-                alert("注册成功，2秒后跳转！");
-                setTimeout(function(){ window.location.href="../../index.html"; }, 2000);
+                alert("注册成功！");
+                window.location.href="../../index.html";
             }
             else{
                 $('#IDError').html("该学号已经被注册");
