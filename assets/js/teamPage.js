@@ -1,14 +1,14 @@
 $(document).ready(function () {
     $("body").on("click", "#deleteBtn", function () {
             var team_name = $(this).parent().siblings().eq(0).text();
-
-            $.post("../common/editTeam.php",{"name":team_name,"flag":5},function (data) {
+        if(confirm("确定删除团队？")) {
+            $.post("../common/editTeam.php", {"name": team_name, "flag": 5}, function (data) {
                 alert("删除团队成功！");
-                window.location.href="../common/teamPage.php";
+                window.location.href = "../common/teamPage.php";
             })
-
         }
-    )
+    });
+
     $("body").on("click", "#editBtn", function () {
 
         var team_name = $(this).parent().siblings().eq(0).text();
@@ -46,13 +46,11 @@ $(document).ready(function () {
                     alert("此学号不存在或已有团队！");
                 }
             })
-
-
-        })
+        });
         $.post("../common/editTeam.php",{"name":team_name,"flag":3},function (data) {
             $("#introduce_text").html(data);
 
-        })
+        });
         $.post("../common/editTeam.php",{"name":team_name,"flag":4},function (data) {
             var json=JSON.parse(data);
             var html="<h2 style=\"margin-top: 0px;\">Just do it！</h2>";
@@ -68,13 +66,7 @@ $(document).ready(function () {
                     "                                            </ul>"
             }
             $("#planTable").html(html);
-
-
         })
-
-
     })
 
-
-
-})
+});
