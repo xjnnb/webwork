@@ -49,9 +49,6 @@
                                                             <div class="icon-preview" style="font-size: inherit;font-size: 6rem; text-align: center;"><i class="la la-plus"></i></div>
                                                         </div>
                                                     </div>
-
-
-
                                                 </td>
                                             </tr>
                                             </tbody>
