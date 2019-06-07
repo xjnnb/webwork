@@ -3,6 +3,7 @@
 
     $user = $_POST["user"];
     $pwd = $_POST["password"];
+    $flag=0;
     $arr = array();
     if($user==null||$pwd==null){
         header("location:../../index.html");//直接打开该php文件，跳转到登录界面
@@ -60,6 +61,6 @@
     $data['username']=$_SESSION["username"];
 //返回json数据
 
-    echo json_encode($data);//输出json数据
+ echo json_encode($data);//输出json数据
 sleep(0.5);
     ?>
