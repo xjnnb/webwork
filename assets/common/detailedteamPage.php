@@ -3,7 +3,7 @@
         <div class="col-md-10 col-md-offset-1">
             <form action="" method="post">
                 <div class="card">
-                    <img class="card-img-top" src="http://cn.inspinia.cn/html/inspiniacn/quillpro/assets/img/gallery-image-3.jpg" alt="Gallery Image 3" style="width: 100% !important;
+                    <img class="card-img-top" src="../img/team.jpeg" alt="Gallery Image 3" style="width: 100% !important;
     height: 150px;">
                     <div class="card-body">
                         <div class="form-group from-show-notify row">

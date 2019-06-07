@@ -18,7 +18,7 @@ $(document).ready(function () {
         for(var i=0;i<json.length;i++){
             html+="<div class=\"col-sm-3 col-md-3 col-lg-3\">\n" +
                 "                                                        <div class=\"card sm-card\">\n" +
-                "                                                            <img class=\"card-img-top\" src=\"http://cn.inspinia.cn/html/inspiniacn/quillpro/assets/img/gallery-image-3.jpg\" alt=\"Gallery Image 3\">\n" +
+                "                                                            <img class=\"card-img-top\" src=\"../img/team.jpeg\" alt=\"Gallery Image 3\">\n" +
                 "                                                            <div class=\"card-body\">\n" +
                 "                                                                <h4 class=\"card-title\">"+json[i].team_name+"</h4>\n" +
                 "                                                                <p class=\"card-text\"><small>"+json[i].simple+"</small></p>\n" +
