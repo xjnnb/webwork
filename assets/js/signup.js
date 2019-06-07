@@ -177,8 +177,8 @@ $("#okBtn").click(function(){
             $.post("../common/signup.php",{"name":name,"sex":sex,"id":id,"dept":dept,"password":password},function (data) {
                 var json = JSON.parse(data);
                 if(json[0].result== '0'){
-                    alert("注册成功，2秒后跳转！");
-                    setTimeout(function(){ window.location="../../index.html"; }, 2000);
+                    alert("注册成功！");
+                    setTimeout(function(){ window.location.href="../../index.html"; }, 2000);
                 }
                 else{
                     $('#IDError').html("该学号已经被注册");
