@@ -23,7 +23,7 @@ $(document).ready(function(){
                     +"<td>"+json[i].id+"</td>"
                     +"<td>"+json[i].dept+"</td>"
                     +"<td>"+json[i].team+"</td>"
-                    +"<td>"+json[i].state+"</td>";
+                    +"<td><a href='#' class='permit'>"+json[i].state+"</a></td>";
                 html+='<td>\n' +
                     '                                                        <div class="form-button-action">\n' +
                     '                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link <btn-simple-primary editBtn" data-original-title="Edit Task" id="editBtn">\n' +
@@ -105,7 +105,7 @@ $(document).ready(function(){
                         +"<td>"+json[i].id+"</td>"
                         +"<td>"+json[i].dept+"</td>"
                         +"<td>"+json[i].team+"</td>"
-                        +"<td>"+json[i].state+"</td>";
+                        +"<td><a href='#' class='permit'>"+json[i].state+"</a></td>";
                     html+='<td>\n' +
                         '                                                        <div class="form-button-action">\n' +
                         '                                                        <button type="button" data-toggle="tooltip" title="" class="btn btn-link <btn-simple-primary" data-original-title="Edit Task" id="editBtn">\n' +
@@ -136,12 +136,11 @@ $(document).ready(function(){
             htmlBtn+=htmlBtnSuf;
             $('#pagination').html(htmlBtn);
 
-             $("body").on("click",".jumpPage",function(e){
-                 e.preventDefault();   //阻止默认事件
-                 currentPage=$(this).parent().text();
-                 console.log(currentPage);
-                 $("#currentPage").html(currentPage);
-
+            $("body").on("click",".jumpPage",function(e){
+                e.preventDefault();   //阻止默认事件
+                currentPage=$(this).parent().text();
+                console.log(currentPage);
+                $("#currentPage").html(currentPage);
                  showInfo();
              });
 
