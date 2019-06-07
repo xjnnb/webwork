@@ -4,8 +4,8 @@ $("#button").click(function(){
     var select=$('input[type=radio][name=optionsRadios]:checked').val();//获取单选框选择的值
     $.post("./assets/common/login.php",{"user":user,"password":password,"select":select},function (data) {
         console.log(data);
-        var json = JSON.parse(data);
-        if((data['flag'])=='0'){
+
+        if((data)==0){
             $("#logResult").html("登陆失败");
         }
         else{
