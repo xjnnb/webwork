@@ -70,7 +70,7 @@
                     </label>
                 </div>
                 <div class="card-action">
-                    <button type="button"  class="btn btn-success" id="okBtn" onclick="submit_check();">确认注册</button>
+                    <button type="button"  class="btn btn-success" id="okBtn" >确认注册</button>
                     <button type="button"  class="btn btn-danger" id="backBtn">返回登陆</button>
                 </div>
             </form>
@@ -80,6 +80,5 @@
 <script src="../js/sets/jquery.3.2.1.min.js"></script>
 <script src="../js/sets/bootstrap.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="../js/signup.js"></script>
-<script type="text/javascript" src="../js/signupAjax.js"></script>
 </body>
 <html>
