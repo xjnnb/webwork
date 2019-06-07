@@ -144,8 +144,6 @@ $('#pwdCheck').focus(function () {
     $('#pwdCheckError').html('&emsp;');
 });
 
-
-
 //对键盘输入作出响应
 $(document).keydown(function(event){
     if (event.keyCode == 13) { //单击回车触发
@@ -166,16 +164,31 @@ $("#okBtn").click(function(){
     nameCorrect= false, IDCorrect= false,pwdCorrect= false,pwdCheckCorrect= false;//初始化
     check_all_status_in_order(); //校验全部
 
-    if (!($('#agreeItems').is(':checked'))) { //检查checkBox是否被选中
-        alert(submitInfos[0]);
-    }
-    else if (nameCorrect && IDCorrect && pwdCorrect && pwdCheckCorrect){
+    // if (!($('.form-check-input').is(':checked'))) { //检查checkBox是否被选中
+    //     alert(submitInfos[0]);
+    // }
+    // else
+    if (nameCorrect && IDCorrect && pwdCorrect && pwdCheckCorrect){
         alert(submitInfos[1]);
     }
     else {
         var confirm = window.confirm(submitInfos[2]); //弹出确认框
         if (confirm) { //判断是否确认
-            //window.location.href = "../../index.html"; //跳转登陆界面
+            var name=$("#name").val();
+            var sex=$('input:radio[name="optionsRadios"]:checked').val();
+            var id=$("#ID").val();
+            var dept=$("#exampleFormControlSelect1").val();
+            var password=$("#password").val();
+            $.post("../common/signup.php",{"name":name,"sex":sex,"id":id,"dept":dept,"password":password},function (data) {
+                var json = JSON.parse(data);
+                if(json[0].result== '0'){
+                    alert("注册成功，2秒后跳转！");
+                    setTimeout(function(){ window.location.href="../../index.html"; }, 2000);
+                }
+                else{
+                    $('#IDError').html("该学号已经被注册");
+                }
+            });
         }
     }
 });
