@@ -49,7 +49,7 @@
                                     <label>团队:</label>
                                 </div>
                                 <div class="col-lg-6 col-md-9 col-sm-12">
-                                    <input type="password" class="form-control" id="team" placeholder="请输入团队" disabled="disabled">
+                                    <input type="text" class="form-control" id="team" placeholder="请输入团队" disabled="disabled">
                                 </div>
                             </div>
                             <div class="form-group from-show-notify row">

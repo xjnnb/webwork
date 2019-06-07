@@ -56,7 +56,7 @@ if($flag==1){
     echo json_encode($brr);//输出json数据
 
 }
-else{
+else if($flag==2){
 
 
     $id = $_POST["id"];
@@ -126,6 +126,17 @@ else{
 
 
 
+}else{
+    $sql="";
+    echo $statue;
+    if($statue=='S'){
+        $sql = "UPDATE stu SET isok ='1' WHERE stu_id='" . $id . "'";
+        echo $sql;
+    }else{
+        $sql = "UPDATE teacher SET isok ='1' WHERE teacher_id='" . $id . "'";
+    }
+    echo $sql;
+    mysqli_query($db,$sql);
 }
 
 
