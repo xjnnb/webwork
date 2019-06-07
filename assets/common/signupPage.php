@@ -63,12 +63,6 @@
                     <small id="checkPasswordHelp" class="form-text text-muted">请再次填写密码</small>
                     <small class="errors" id="pwdCheckError">&emsp;</small>
                 </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="" id=“agreeItems”>
-                        <span class="form-check-sign">Agree with terms and conditions</span>
-                    </label>
-                </div>
                 <div class="card-action">
                     <button type="button"  class="btn btn-success" id="okBtn" >确认注册</button>
                     <button type="button"  class="btn btn-danger" id="backBtn">返回登陆</button>

@@ -141,10 +141,8 @@ $(document).ready(function(){
                 currentPage=$(this).parent().text();
                 console.log(currentPage);
                 $("#currentPage").html(currentPage);
-
-                showInfo();
-
-            });
+                 showInfo();
+             });
 
             if(totalPage==0){
                 $("#selectInfoTable").html("暂无数据");
