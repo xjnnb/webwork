@@ -22,7 +22,7 @@
         <?php include "sidebar.php"; ?>
         <div class="main-panel">
             <div class="content">
-                <div class="container-fluid">
+                <div class="container-fluid" id="main1" style="display: block">
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <form action="" method="post">
@@ -49,41 +49,9 @@
                                                             <div class="icon-preview" style="font-size: inherit;font-size: 6rem; text-align: center;"><i class="la la-plus"></i></div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-3 col-md-3 col-lg-3">
-                                                        <div class="card sm-card">
-                                                            <img class="card-img-top" src="http://cn.inspinia.cn/html/inspiniacn/quillpro/assets/img/gallery-image-3.jpg" alt="Gallery Image 3">
-                                                            <div class="card-body">
-                                                                <h4 class="card-title">三只菜鸡</h4>
-                                                                <p class="card-text"><small>虽然我们代码菜，但是我们界面好看啊！</small></p>
-                                                                <p class="card-text text-right">
-                                                                    <button type="button" data-toggle="tooltip" title="" class="btn-link <btn-simple-primary" data-original-title="Edit Task" id="editBtn">
-                                                                        <i class="la la-edit"></i>
-                                                                    </button>
-                                                                    <button type="button" data-toggle="tooltip" title="" class="btn-link btn-simple-danger" data-original-title="Remove" id="deleteBtn">
-                                                                        <i class="la la-times"></i>
-                                                                    </button>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
-                                                    <div class="col-sm-3 col-md-3 col-lg-3">
-                                                        <div class="card sm-card">
-                                                            <img class="card-img-top" src="http://cn.inspinia.cn/html/inspiniacn/quillpro/assets/img/gallery-image-3.jpg" alt="Gallery Image 3">
-                                                            <div class="card-body">
-                                                                <h4 class="card-title">三只菜鸡</h4>
-                                                                <p class="card-text"><small>虽然我们代码菜，但是我们界面好看啊！</small></p>
-                                                                <p class="card-text text-right">
-                                                                    <button type="button" data-toggle="tooltip" title="" class="btn-link <btn-simple-primary" data-original-title="Edit Task" id="editBtn">
-                                                                        <i class="la la-edit"></i>
-                                                                    </button>
-                                                                    <button type="button" data-toggle="tooltip" title="" class="btn-link btn-simple-danger" data-original-title="Remove" id="deleteBtn">
-                                                                        <i class="la la-times"></i>
-                                                                    </button>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+
+
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -95,6 +63,8 @@
                     </div>
                     <?php include "pagination.php"; ?>
                 </div>
+                <?php include "detailedteamPage.php";?>
+
             </div>
             <?php include "footer.php"; ?>
         </div>
@@ -105,6 +75,7 @@
 <script src="../js/sets/bootstrap.js"></script>
 <script src="../js/sets/ready.min.js"></script>
 <script src="../js/team.js"></script>
+<script src="../js/teamPage.js"></script>
 <script type="text/javascript" src="../js/metchHeight.js"></script>
 <script type="text/javascript" src="../js/team.js"></script>
 </body>

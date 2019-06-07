@@ -1,13 +1,14 @@
 $(document).ready(function() {
     $("body").on("click", ".editBtn", function () {
-        var power = $("#userLevelInfo").val();
-        console.log(power);
-        if (power == "Student") {
+        var id = $(this).parent().parent().siblings().eq(2).text();
+        var power = id.charAt(0);
+
+        if (power == 'S') {
             alert("对不起，您没有此权限！");
         } else {
                 $("#main1").hide();
                 $("#main2").show();
-            var id = $(this).parent().parent().siblings().eq(2).text();
+
 
             $.post("../common/editPerson.php", {"id": id, "flag": 0}, function (data) {
                 var json = JSON.parse(data);
@@ -33,10 +34,13 @@ $(document).ready(function() {
 
 
         $("body").on("click", ".deleteBtn", function () {
-            if (power == "Student") {
+            var id = $(this).parent().parent().siblings().eq(2).text();
+            var power = id.charAt(0);
+
+            if (power == 'S') {
                 alert("对不起，您没有此权限！");
             } else {
-                var id = $(this).parent().parent().siblings().eq(2).text();
+
 
                 $.post("../common/editPerson.php", {"id": id, "flag": 1}, function (data) {
                     alert("删除成功！");
