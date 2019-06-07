@@ -20,7 +20,7 @@
         <?php include "sidebar.php"; ?>
         <div class="main-panel">
             <div class="content">
-                <div class="container-fluid">
+                <div class="container-fluid" id="main1" style="display: block">
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <div class="card">
@@ -47,8 +47,8 @@
                                         <div class="col-lg-2 col-md-3 col-sm-2">
                                             <select class="form-control" id="seltype">
                                                 <option value ="allSearch">全部</option>
-                                                <option value ="match">比赛通知</option>
-                                                <option value ="activity">活动通知</option>
+                                                <option value ="match">比赛公告</option>
+                                                <option value ="activity">活动公告</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-4 text-right col-lg-offset-1">
@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="compose-message">
-                                            <a href="../common/addNoticePage.php" class="btn btn-default btn-gradient btn-block up-notice" role="button">发布公告</a>
+                                            <a href="#" class="btn btn-default btn-gradient btn-block up-notice" role="button" id="addNotice">发布公告</a>
                                         </div>
                                     </div>
                                     <table class="table table-typo">
@@ -91,6 +91,8 @@
                     </div>
                     <?php include "pagination.php"; ?>
                 </div>
+            <?php  include "addNoticePage.php"?>
+
             </div>
             <?php include "footer.php"; ?>
         </div>

@@ -1,8 +1,13 @@
 $(document).ready(function() {
-    $("body").on("click", ".editBtn", function () {
-        var id = $(this).parent().parent().siblings().eq(2).text();
-        var power = id.charAt(0);
+    var power ="test";
+    $.post("../common/sidebarInfo.php",{ },function (data) {
+        var json=JSON.parse(data);
+        power = json.userLevel;
+        power = power.substring(0,1);
+    });
 
+    $("body").on("click", ".editBtn", function () {
+        console.log(power);
         if (power == 'S') {
             alert("对不起，您没有此权限！");
         } else {

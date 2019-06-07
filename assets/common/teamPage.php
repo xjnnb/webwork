@@ -64,6 +64,7 @@
                     <?php include "pagination.php"; ?>
                 </div>
                 <?php include "detailedteamPage.php";?>
+                <?php include "addteamPage.php"; ?>
 
             </div>
             <?php include "footer.php"; ?>
@@ -78,7 +79,7 @@
 <script src="../js/team.js"></script>
 <script src="../js/teamPage.js"></script>
 <script type="text/javascript" src="../js/metchHeight.js"></script>
-<script type="text/javascript" src="../js/team.js"></script>
+
 </body>
 
 </html>
