@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $.post("../common/sidebarInfo.php",{ },function (data) {
         var json=JSON.parse(data);
@@ -179,6 +180,7 @@ $(document).ready(function () {
             })
         })
     })
+
 
     $("body").on("click", ".addTeam", function () {
 
