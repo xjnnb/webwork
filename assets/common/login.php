@@ -22,6 +22,7 @@
         session_start();
         $_SESSION["username"]=$arr[0][0];
         $_SESSION["userLevel"]="Student";
+        $_SESSION["permit"]=$arr[0][7];
     }
      //在老师的表中查找用户
     $sql="SELECT * FROM teacher  WHERE teacher_id='".$user."' AND password='".$pwd."';";
@@ -37,6 +38,7 @@
         session_start();
         $_SESSION["username"]=$arr[0][0];
         $_SESSION["userLevel"]="Teacher";
+        $_SESSION["permit"]=$arr[0][6];
     }
      //在管理员的表中查找用户
     $sql="SELECT * FROM admin  WHERE admin_id='".$user."' AND password='".$pwd."';";
@@ -51,6 +53,7 @@
         session_start();
         $_SESSION["username"]=$arr[0][2];
         $_SESSION["userLevel"]="Administrator";
+        $_SESSION["permit"]="1";
     }
 //    组装json
     $data['flag']=$flag;

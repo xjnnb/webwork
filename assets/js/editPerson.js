@@ -1,16 +1,20 @@
 $(document).ready(function() {
     var power ="test";
+    var permission = "0";
     $.post("../common/sidebarInfo.php",{ },function (data) {
         var json=JSON.parse(data);
         power = json.userLevel;
         power = power.substring(0,1);
+        permission = json.permit;
     });
 
     $("body").on("click", ".editBtn", function () {
         var id = $(this).parent().parent().siblings().eq(2).text();
         if (power == 'S') {
             alert("对不起，您没有此权限！");
-        } else {
+        } else if (permission !=="1"){
+            alert("对不起，您还未经过审批！");
+        } else{
             $("#main1").hide();
             $("#main2").show();
 
@@ -39,7 +43,9 @@ $(document).ready(function() {
         $("body").on("click", ".deleteBtn", function () {
             if (power == 'S') {
                 alert("对不起，您没有此权限！");
-            } else {
+            } else if (permission !=="1"){
+                alert("对不起，您还未经过审批！");
+            } else{
                 if(confirm("确定执行删除操作?")){
                     var id = $(this).parent().parent().siblings().eq(2).text();
                     $.post("../common/editPerson.php", {"id": id, "flag": 1}, function (data) {
