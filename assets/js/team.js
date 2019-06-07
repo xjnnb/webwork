@@ -1,9 +1,11 @@
 
 $(document).ready(function () {
+    var permission = "0";
     $.post("../common/sidebarInfo.php",{ },function (data) {
         var json=JSON.parse(data);
         $("#userNameInfo").html(json.username);
         $("#userLevelInfo").html(json.userLevel);
+        permission = json.permit;
     });
 
     $.post("../common/team.php",{"searchText":""},function (data) { //预加载
@@ -183,9 +185,12 @@ $(document).ready(function () {
 
 
     $("body").on("click", ".addTeam", function () {
-
-        $("#main1").hide();
-        $("#main3").show();
+        if (permission !=="1") {
+            alert("对不起，您还未经过审批！");
+        }else {
+            $("#main1").hide();
+            $("#main3").show();
+        }
 
     })
 
