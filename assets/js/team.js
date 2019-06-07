@@ -37,7 +37,6 @@ $(document).ready(function () {
                 "                                                    </div>";
         }
         $("#selectInfoTable").html(html);
-
         //metchHeight
         var $divClass = $('.sm-card');
         var height = 0;
@@ -48,6 +47,47 @@ $(document).ready(function () {
         });
         $divClass.height(height);
         $('.icon-preview').css('marginTop',height/3);
+
+        //pagination
+        var json = JSON.parse(data);
+        var pageSize=7;
+        var totalPage = Math.ceil(json.length/pageSize);
+        var currentPage=1;
+
+        var htmlBtnPre="<li><a href=\"#\" id=\"prePage\">«</a></li>";
+        var htmlBtnSuf="<li><a href=\"#\" id=\"nextPage\">»</a></li>";
+        var htmlBtn=htmlBtnPre;
+        for(var i=1;i<=totalPage;i++){
+            htmlBtn+="<li><a href='#' class ='jumpPage'>"+i+"</a></li>";
+        }
+        htmlBtn+=htmlBtnSuf;
+        $('#pagination').html(htmlBtn);
+
+        $("body").on("click",".jumpPage",function(e){
+            e.preventDefault();   //阻止默认事件
+            currentPage=$(this).parent().text();
+            console.log(currentPage);
+            $("#currentPage").html(currentPage);
+            showInfo();
+        });
+
+        if(totalPage==0){
+            $("#selectInfoTable").html("暂无数据");
+        }else{
+            $("#totalPage").html(totalPage);
+            $("#currentPage").html(1);
+            showInfo();
+        }
+        $("#nextPage").click(function () {
+            currentPage=Math.min(currentPage+1,totalPage);
+            $("#currentPage").html(currentPage);
+            showInfo();
+        });
+        $("#prePage").click(function () {
+            currentPage=Math.max(currentPage-1,1);
+            $("#currentPage").html(currentPage);
+            showInfo();
+        })
 
     })
 
@@ -87,6 +127,17 @@ $(document).ready(function () {
                 }
                 $("#selectInfoTable").html(html);
             }
+
+            //metchHeight
+            var $divClass = $('.sm-card');
+            var height = 0;
+            $divClass.each(function () {
+                if ($(this).height() > height) {
+                    height = $(this).height();
+                }
+            });
+            $divClass.height(height);
+            $('.icon-preview').css('marginTop',height/3);
 
 
             //pagination
@@ -129,17 +180,6 @@ $(document).ready(function () {
                 $("#currentPage").html(currentPage);
                 showInfo();
             })
-
-            //metchHeight
-            var $divClass = $('.sm-card');
-            var height = 0;
-            $divClass.each(function () {
-                if ($(this).height() > height) {
-                    height = $(this).height();
-                }
-            });
-            $divClass.height(height);
-            $('.icon-preview').css('marginTop',height/3);
         })
     })
     $("body").on("click", ".addTeam", function () {
