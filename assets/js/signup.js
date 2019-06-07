@@ -163,12 +163,10 @@ function check_all_status_in_order() {
 $("#okBtn").click(function(){
     nameCorrect= false, IDCorrect= false,pwdCorrect= false,pwdCheckCorrect= false;//初始化
     check_all_status_in_order(); //校验全部
-
-    // if (!($('.form-check-input').is(':checked'))) { //检查checkBox是否被选中
-    //     alert(submitInfos[0]);
-    // }
-    // else
-    if (nameCorrect && IDCorrect && pwdCorrect && pwdCheckCorrect){
+    if (!($("input[name='agreeItems]").is(':checked'))) { //检查checkBox是否被选中
+        alert(submitInfos[0]);
+    }
+    else if (!nameCorrect || !IDCorrect ||! pwdCorrect ||! pwdCheckCorrect){
         alert(submitInfos[1]);
     }
     else {
@@ -192,18 +190,3 @@ $("#okBtn").click(function(){
         }
     }
 });
-// function submit_check() {
-//     nameCorrect= false, IDCorrect= false,pwdCorrect= false,pwdCheckCorrect= false;//初始化
-//     check_all_status_in_order(); //按顺序检查所以输入是否正确
-//     var checkBoxObj = document.getElementById("agreeItems");
-//     if (!checkBoxObj.checked) { //检查checkBox是否被选中,并在报错后变更验证码
-//         alert(submitInfos[0]);
-//     } else if (checkStatus) { //检查所有输入项是否合法,并在报错后变更验证码
-//         alert(submitInfos[1]);
-//     } else {
-//         var confirm = window.confirm(submitInfos[2]); //弹出确认框
-//         if (confirm) { //判断是否确认
-//             //window.location.href = "../../index.html"; //跳转登陆界面
-//         }
-//     }
-// }
