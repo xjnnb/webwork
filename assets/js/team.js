@@ -11,7 +11,7 @@ $(document).ready(function () {
         console.log(json);
         var html="";
         html+="<div class=\"col-sm-3 col-md-3 col-lg-3\">\n" +
-            "                                                        <div class=\"card sm-card\" style=\"background-color: #f2f3f8;border-radius: 10px;\">\n" +
+            "                                                        <div class=\"card sm-card\" style=\"background-color: #f2f3f8;border-radius: 10px;cursor:pointer;\">\n" +
             "                                                            <div class=\"icon-preview addTeam\" style=\"font-size: inherit;font-size: 6rem;  text-align: center;\"><i class=\"la la-plus\"></i></div>\n" +
             "                                                        </div>\n" +
             "                                                    </div>";
@@ -100,14 +100,14 @@ $(document).ready(function () {
             function showInfo() {
                 var html = "";
                 html += "<div class=\"col-sm-3 col-md-3 col-lg-3\">\n" +
-                    "                                                        <div class=\"card sm-card\" style=\"background-color: #f2f3f8;border-radius: 10px;\">\n" +
+                    "                                                        <div class=\"card sm-card\" style=\"background-color: #f2f3f8;border-radius: 10px;cursor:pointer;\">\n" +
                     "                                                            <div class=\"icon-preview\" style=\"font-size: inherit;font-size: 6rem; text-align: center;\"><i class=\"la la-plus\"></i></div>\n" +
                     "                                                        </div>\n" +
                     "                                                    </div>";
                 for (var i = 0; i < json.length; i++) {
                     html += "<div class=\"col-sm-3 col-md-3 col-lg-3\">\n" +
                         "                                                        <div class=\"card sm-card\">\n" +
-                        "                                                            <img class=\"card-img-top\" src=\"http://cn.inspinia.cn/html/inspiniacn/quillpro/assets/img/gallery-image-3.jpg\" alt=\"Gallery Image 3\">\n" +
+                        "                                                            <img class=\"card-img-top\" src=\"../img/team.jpeg\" alt=\"Gallery Image 3\">\n" +
                         "                                                            <div class=\"card-body\">\n" +
                         "                                                                <h4 class=\"card-title\">" + json[i].team_name + "</h4>\n" +
                         "                                                                <p class=\"card-text\"><small>" + json[i].simple + "</small></p>\n" +
