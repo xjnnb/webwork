@@ -1,16 +1,28 @@
 $(document).ready(function () {
+    var power ="test";
+    $.post("../common/sidebarInfo.php",{ },function (data) {
+        var json=JSON.parse(data);
+        power = json.userLevel;
+        power = power.substring(0,1);
+    });
+
     $("body").on("click", "#deleteBtn", function () {
-            var team_name = $(this).parent().siblings().eq(0).text();
-        if(confirm("确定删除团队？")) {
-            $.post("../common/editTeam.php", {"name": team_name, "flag": 5}, function (data) {
-                alert("删除团队成功！");
-                window.location.href = "../common/teamPage.php";
-            })
+        console.log(power);
+        var team_name = $(this).parent().siblings().eq(0).text();
+        if (power == 'S') {
+            alert("对不起，您没有此权限！");
+        } else {
+            if (confirm("确定删除团队？")) {
+                $.post("../common/editTeam.php", {"name": team_name, "flag": 5}, function (data) {
+                    alert("删除团队成功！");
+                    window.location.href = "../common/teamPage.php";
+                })
+            }
         }
     });
 
     $("body").on("click", "#editBtn", function () {
-
+        console.log(power);
         var team_name = $(this).parent().siblings().eq(0).text();
         $("#main1").hide();
         $("#main2").show();
@@ -19,7 +31,7 @@ $(document).ready(function () {
             var json=JSON.parse(data);
             $("#chargeTeach").html(json[0].teacher_name);
             $("#chargeStu").html(json[0].stu_name);
-        })
+        });
         function showInfo() {
             $.post("../common/editTeam.php", {"name": team_name, "flag": 1}, function (data) {
                 var json = JSON.parse(data);
@@ -35,17 +47,21 @@ $(document).ready(function () {
             })
         }
         showInfo();
-        $("#addNewPeo").click(function () {
-            var stu_id=$("#inlineinput").val();
-            $.post("../common/editTeam.php",{"name":team_name,"stu_id":stu_id,"flag":2},function (data) {
-                if(data==1){
-                    alert("添加成功");
-                    showInfo();
 
-                }else{
-                    alert("此学号不存在或已有团队！");
-                }
-            })
+        $("#addNewPeo").click(function () {
+            if (power == 'S') {
+                alert("对不起，您没有此权限！");
+            } else {
+                var stu_id = $("#inlineinput").val();
+                $.post("../common/editTeam.php", {"name": team_name, "stu_id": stu_id, "flag": 2}, function (data) {
+                    if (data == 1) {
+                        alert("添加成功");
+                        showInfo();
+                    } else {
+                        alert("此学号不存在或已有团队！");
+                    }
+                })
+            }
         });
         $.post("../common/editTeam.php",{"name":team_name,"flag":3},function (data) {
             $("#introduce_text").html(data);
