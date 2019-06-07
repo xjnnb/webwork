@@ -99,9 +99,9 @@ $(document).ready(function () {
             console.log(json);
             function showInfo() {
                 var html = "";
-                html+="<div class=\"col-sm-3 col-md-3 col-lg-3\">\n" +
+                html += "<div class=\"col-sm-3 col-md-3 col-lg-3\">\n" +
                     "                                                        <div class=\"card sm-card\" style=\"background-color: #f2f3f8;border-radius: 10px;\">\n" +
-                    "                                                            <div class=\"icon-preview addTeam\" style=\"font-size: inherit;font-size: 6rem;  text-align: center;\"><i class=\"la la-plus\"></i></div>\n" +
+                    "                                                            <div class=\"icon-preview\" style=\"font-size: inherit;font-size: 6rem; text-align: center;\"><i class=\"la la-plus\"></i></div>\n" +
                     "                                                        </div>\n" +
                     "                                                    </div>";
                 for (var i = 0; i < json.length; i++) {
